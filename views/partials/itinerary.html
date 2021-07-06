@@ -1,0 +1,55 @@
+<h1>Itinerary page!</h1>
+
+
+<div class="container">
+    ${itinerary_data.length > 0 ? 
+        `
+        ${itinerary_data.map (plan => 
+            `  
+        <div class="row">
+            <div class="col">
+                <h2>${plan.park_name}</h2>
+
+            </div>
+            <div class="col">
+                <h3>Activities</h3>
+                <h4>${plan.activity_name}</h4>
+                <p>Time: ${plan.activity_time}</p>
+                <p>${plan.activity_description}</p>
+
+            </div>
+            <div class="col">
+                <h3>Dining</h3>
+                <p>${plan.restaurant_name}</p>
+            </div>
+        </div>
+            `
+        
+        ).join('')}
+
+        <h2>Your Lodging</h2>
+
+        ${lodging_data.map (hotel => 
+            `
+            <div class="row">
+                <div class="col">
+                    <h3>${hotel.lodging_name}</h3>
+                    <img src="${hotel.lodging_image}" class="lodging-image" alt="image of the chosen resort">
+                    <a href="${hotel.lodging_url}" class="btn btn-primary">Website</a>
+
+                </div>
+
+
+            </div>
+        
+            `
+            ).join('')}
+
+
+        `
+        :
+        `<h2>Start Planning Your Trip by Going to the Park Selector Page!</h2>
+        <button>SELECT A PARK</button>`
+    
+    }
+</div>

@@ -43,3 +43,8 @@ INSERT INTO plan
     (user_id, parks_id, activity_id, food_id)
 VALUES
     (1, 1, 2, 2);
+
+INSERT INTO parks
+    (park_name, park_description)
+VALUES
+    ('Animal Kingdom', 'A zoological theme park that features attractions, rides, and hundreds of species of live animals');
