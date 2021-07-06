@@ -1,3 +1,8 @@
+/* Itinerary Page Styles */
+.park-image {
+    width: 300px;
+}
+
 .lodging-image {
     width: 500px;
 }
@@ -6,4 +11,8 @@
     display: block;
     width: 150px;
     margin-top: 10px;
+}
+
+.itinerary-row {
+    margin-top: 15px;
 }

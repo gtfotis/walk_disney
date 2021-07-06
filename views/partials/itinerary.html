@@ -1,3 +1,5 @@
+<div class="container">
+
 <h1>Itinerary page!</h1>
 
 
@@ -6,9 +8,10 @@
         `
         ${itinerary_data.map (plan => 
             `  
-        <div class="row">
+        <div class="row itinerary-row">
             <div class="col">
                 <h2>${plan.park_name}</h2>
+                <img src="${plan.park_image}" class="park-image">
 
             </div>
             <div class="col">
@@ -31,11 +34,11 @@
 
         ${lodging_data.map (hotel => 
             `
-            <div class="row">
+            <div class="row itinerary-row">
                 <div class="col">
                     <h3>${hotel.lodging_name}</h3>
                     <img src="${hotel.lodging_image}" class="lodging-image" alt="image of the chosen resort">
-                    <a href="${hotel.lodging_url}" class="btn btn-primary">Website</a>
+                    <a href="${hotel.lodging_url}" class="btn btn-primary" target="_blank">Website</a>
 
                 </div>
 
@@ -52,4 +55,5 @@
         <button>SELECT A PARK</button>`
     
     }
+</div>
 </div>
