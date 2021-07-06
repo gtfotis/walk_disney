@@ -26,4 +26,20 @@ VALUES
 INSERT INTO plan 
     (user_id, parks_id, activity_id, food_id, lodging_id)
 VALUES 
-    (1, 1, 1, 1, 1)
+    (1, 1, 1, 1, 1);
+
+
+INSERT INTO activities 
+    (activity_name, activity_description, kid_friendly, activity_time, park_id)
+VALUES
+    ('Haunted Mansion', 'A classic ride through a labyrinth of haunted chambers', true, '2:00', 1);
+
+INSERT INTO food
+    (restaurant_name, cuisine, price_range, park_id)
+VALUES
+    ('Cinderella''s Royal Table', 'Fine Dining', '$$$$', 1);
+
+INSERT INTO plan
+    (user_id, parks_id, activity_id, food_id)
+VALUES
+    (1, 1, 2, 2);
