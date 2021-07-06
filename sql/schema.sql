@@ -11,7 +11,6 @@ CREATE TABLE parks (
     id serial PRIMARY KEY,
     park_name text,
     park_description text
-
 );
 
 CREATE TABLE activities (
