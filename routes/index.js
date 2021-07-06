@@ -4,10 +4,10 @@ const router = express.Router();
 router.get('/', (req, res) => {
     res.render('template', {
         locals: {
-            title: 'Home Page'
+            title: 'Walk Disney'
         },
         partials: {
-            body: 'partial-index'
+            body: 'partials/index'
         }
     })
 })
