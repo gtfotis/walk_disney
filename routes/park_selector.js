@@ -1,13 +1,15 @@
 'use strict';
 const express = require('express');
 const router = express.Router();
+const ParkSelector = require('../models/ParkSelectorModel')
 router.get('/', (req, res) => {
     res.render('template', {
         locals: {
-            title: 'Walk Disney'
+            title: 'Park Selector',
+            data: ParkSelector
         },
         partials: {
-            body: 'partials/index'
+            body: 'partials/park_selector'
         }
     })
 })
