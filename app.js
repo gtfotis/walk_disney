@@ -6,6 +6,14 @@ const hostname = '127.0.0.1';
 const port = 3000;
 const express = require('express');
 const app = express();
+const session = require('express-session')
+
+app.use(session({
+    secret: 'strawberry banana',
+    resave: false,
+    saveUninitialized: false,
+    is_logged_in: false
+}))
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -26,7 +34,9 @@ const rootController = require('./routes/index');
 const activitiesController = require('./routes/activities');
 const itineraryController = require('./routes/itinerary');
 const parkSelectorController = require('./routes/park_selector');
+const userController = require('./routes/users');
 app.use('/', rootController);
 app.use('/activities', activitiesController);
 app.use('/itinerary', itineraryController);
 app.use('/park_selector', parkSelectorController);
+app.use('/users', userController);
