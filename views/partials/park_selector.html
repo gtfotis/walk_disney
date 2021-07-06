@@ -1,1 +1,8 @@
 <h1>${title}</h1>
+<ul>
+    ${data.map(park => `
+    <li>
+        <a href='./park_selector/${park.slug}'><img src=''>${park.park_name}
+        </a>`).join('')}
+    </li>
+</ul>
