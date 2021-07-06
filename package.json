@@ -1,0 +1,22 @@
+{
+    "name": "walk_disney",
+    "version": "1.0.0",
+    "description": "",
+    "main": "app.js",
+    "scripts": {
+        "run": "node app.js",
+        "dev": "nodemon app.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "bcrypt": "^5.0.1",
+        "dotenv": "^10.0.0",
+        "express": "^4.17.1",
+        "express-es6-template-engine": "^2.2.3",
+        "node-fetch": "^2.6.1",
+        "pg-promise": "^10.10.2"
+    }
+}
