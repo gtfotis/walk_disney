@@ -13,7 +13,14 @@ app.set('views', './views');
 app.set('view engine', 'html');
 const server = http.createServer(app);
 server.listen(port, hostname, () => {
-    console.log()
+    console.log(`The server is running at http://${hostname}:${port}`)
 });
+
 const rootController = require('./routes/index');
+const activitiesController = require('./routes/activities');
+const itineraryController = require('./routes/itinerary');
+const parkSelectorController = require('./routes/park_selector');
 app.use('/', rootController);
+app.use('/activities', activitiesController);
+app.use('/itinerary', itineraryController);
+app.use('/park_selector', parkSelectorController);
