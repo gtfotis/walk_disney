@@ -20,7 +20,6 @@ class Itinerary {
             WHERE plan.user_id = ${user_id};
             `)
             const response = await db.any(query)
-            console.log('GET PLAN QUERY:', response)
             return response
 
         } catch(error) {
@@ -39,6 +38,37 @@ class Itinerary {
 
         } catch(error) {
             console.error('ERROR: ', error);
+            return error;
+        }
+    }
+    
+
+    static async removeActivity(activity_id) {
+        try {
+            // Sets to null so the lodging is unaffected
+            const query = (`
+            UPDATE plan SET parks_id = null, activity_id = null, food_id = null WHERE activity_id = ${activity_id};
+            `);
+            console.log(query);
+            const response = await db.any(query);
+            return response;
+            
+        } catch(error) {
+            console.error('ERROR: ', error);
+            return error;
+        }
+    }
+
+    static async removeLodging(lodging_id) {
+        try {
+            //Sets to null in case they only want to delete lodging.
+            const query = (`UPDATE plan SET lodging_id = null WHERE lodging_id = ${lodging_id};`);
+            const response = await db.any(query);
+            return response;
+
+
+        } catch(error) {
+            console.error('ERROR: ', error)
             return error;
         }
     }

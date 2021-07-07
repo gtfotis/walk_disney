@@ -18,5 +18,25 @@ router.get('/', async (req, res) => {
             body: 'partials/itinerary'
         }
     })
+});
+
+
+router.post('/update', async (req, res) => {
+    const { activity_id } = req.body;
+    console.log(req.body);
+    const response = await ItineraryModel.removeActivity(activity_id);
+    console.log('UPDATE RESPONSE, ', response);
+    res.redirect('back');
+
+});
+
+router.post('/delete_lodging', async (req, res) => {
+    const { lodging_id } = req.body;
+    const response = await ItineraryModel.removeLodging(lodging_id);
+    console.log('DELETE LODGING RESPONSE: ', response);
+    res.redirect('back');
 })
+
+
+
 module.exports = router;
