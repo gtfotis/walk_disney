@@ -2,10 +2,13 @@
 const db = require('./conn');
 
 class ParkSelectorModel {
-    constructor(id, park_name, park_description) {
+    constructor(id, user_id, parks_id, activity_id, food_id, lodging_id) {
         this.id = id;
-        this.park_name = park_name;
-        this.park_description = park_description;
+        this.user_id = user_id;
+        this.parks_id = parks_id;
+        this.activity_id = activity_id;
+        this.food_id = food_id;
+        this.lodging_id = lodging_id;
     }
 
     static async getAll() {
@@ -13,7 +16,6 @@ class ParkSelectorModel {
             const response = await db.any(
                 `SELECT * FROM parks;`
             );
-            console.log(response);
             return response;
         } catch (error) {
             console.error('ERROR: ', error);
@@ -35,12 +37,27 @@ class ParkSelectorModel {
 
     static async getActivities(id) {
         try {
-            const activitiesResponse = await db.one(
+            const activitiesResponse = await db.any(
                 `SELECT * FROM activities WHERE park_id = '${id}';`
             );
-            console.log(activitiesResponse);
             return activitiesResponse;
         } catch (error) {
+            console.error('ERROR: ', error);
+            return error;
+        }
+    }
+
+    async addParkId() {
+        try {
+            const query = (`INSERT INTO plan 
+                (user_id, parks_id, activity_id, food_id, lodging_id) 
+                VALUES 
+                (${this.user_id}, ${this.parks_id}, ${this.activity_id}, ${this.food_id}, ${this.lodging_id}) 
+                ;`);
+            const response = await db.result(query);
+            return response;
+
+        } catch(error) {
             console.error('ERROR: ', error);
             return error;
         }

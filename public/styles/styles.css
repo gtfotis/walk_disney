@@ -10,8 +10,13 @@ a:hover {
     text-decoration: none;
 }
   
+/* Itinerary Page Styles */
+.park-image {
+    width: 300px;
+}
+
 .lodging-image {
-    width: 500px;
+    width: 400px;
 }
 
 .btn-primary {
@@ -132,4 +137,22 @@ a:hover {
 
 .bottomBoxes div {
     padding: 70px;
+}
+
+.itinerary-row {
+    margin-top: 15px;
+}
+
+.delete-btn  {
+    display: inline-block;
+    margin: 10px 5px;
+}
+
+.button-container {
+    display: flex;
+}
+
+.lodging-title {
+    color: navy;
+    margin-top: 30px;
 }
