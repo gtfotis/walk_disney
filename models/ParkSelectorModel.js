@@ -2,10 +2,12 @@
 const db = require('./conn');
 
 class ParkSelectorModel {
-    constructor(id, park_name, park_description) {
+    constructor(id, park_name, park_description, slug, park_image) {
         this.id = id;
         this.park_name = park_name;
         this.park_description = park_description;
+        this.slug = slug;
+        this.park_image = park_image;
     }
 
     static async getAll() {
@@ -35,7 +37,7 @@ class ParkSelectorModel {
 
     static async getActivities(id) {
         try {
-            const activitiesResponse = await db.one(
+            const activitiesResponse = await db.any(
                 `SELECT * FROM activities WHERE park_id = '${id}';`
             );
             console.log(activitiesResponse);
