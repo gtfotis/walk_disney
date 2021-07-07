@@ -3,6 +3,13 @@
     "version": "1.0.0",
     "description": "",
     "main": "app.js",
+    "nodemonConfig": {
+        "ignore": [
+            "test/*",
+            "docs/*"
+        ],
+        "delay": 2500
+    },
     "scripts": {
         "run": "node app.js",
         "dev": "nodemon app.js",
