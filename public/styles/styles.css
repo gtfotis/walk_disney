@@ -1,3 +1,15 @@
+body { 
+    background-color: rgb(42, 42, 92); 
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+  
 /* Itinerary Page Styles */
 .park-image {
     width: 300px;
@@ -11,6 +23,120 @@
     display: block;
     width: 150px;
     margin-top: 10px;
+}
+
+/* CAROUSEL ITEMS */
+
+.carousel-item img {
+    height: 500px;
+}
+
+.carousel {
+    padding-left: 50px;
+    width:70%;
+  }
+
+.carousel img {
+    border-radius: 10px;
+}
+
+.bodyAlignment {
+    display: flex;
+    flex-direction: row;
+}
+
+/* LOGIN ITEMS */
+
+.login-box {
+    background-color: white;
+    border: 1px solid #D8D8D8;
+    border-radius: 10px;
+    width: 300px;
+    height: 500px;
+    margin-right: 50px;
+    margin-left: 50px;
+    padding: 50px 10px 10px 10px;
+    position: relative;
+}
+
+.login-box p {
+    font-size: 20px;
+}
+.login-text > *{
+    margin-top: 40px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.login-text button {
+    margin-top: 50px;
+}
+
+/* NAVIGATION BAR ITEMS */
+
+.customHeader {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 20px;
+}
+
+.containerLeft {
+    margin-left: 3em;
+}
+
+.containerRight {
+    display: flex;
+    flex-direction: end;
+    justify-content: flex-end;
+}
+
+.nav {
+    padding-top: 14px;
+    padding-bottom: 14px;
+}
+
+.nav-item {
+    margin-right: 3em;
+}
+
+#colors a {
+    color: white;
+    font-size: 20px;
+    letter-spacing: 1px;
+    font-family: 'WaltographRegular';
+    font-weight: normal;
+    font-style: normal;
+    padding-top: 20px;
+}
+
+#colors a:hover {
+    color: rgb(174, 224, 247);
+    font-size: 25px;
+    transition: 0.5s;
+    padding-top: 13px;
+}
+
+.headertext {
+    padding-top: 20px;
+    font-family: 'WaltographRegular';
+    font-weight: normal;
+    font-style: normal;
+    color: white;
+}
+
+/* BIKINI BOTTOM ITEMS */
+
+.bottomBoxes {
+    padding: 100px;
+    display: flex;
+    flex-direction: row;
+    color: white;
+}
+
+.bottomBoxes div {
+    padding: 70px;
 }
 
 .itinerary-row {
