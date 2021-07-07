@@ -7,14 +7,11 @@ router.get('/:slug?', async(req, res) => {
     if (!!req.params.slug) {
         const { slug } = req.params;
         const thePark = await ParkSelectorModel.getBySlug(slug);
-        const { id } = req.params;
-        console.log(id);
-        // const theParkData = await ParkSelectorModel.getActivities(id);
+        const theParkData = await ParkSelectorModel.getActivities(thePark.id);
         res.render('template', {
             locals: {
-                title: 'Park Activities',
-                data: thePark,
-                // theParkData
+                title: 'Make a Plan',
+                data: theParkData
             },
             partials: {
                 body: 'partials/park_activities'
@@ -24,7 +21,7 @@ router.get('/:slug?', async(req, res) => {
         const parkData = await ParkSelectorModel.getAll();
         res.render('template', {
             locals: {
-                title: 'Park Selector',
+                title: 'Select a Park',
                 data: parkData
             },
             partials: {
