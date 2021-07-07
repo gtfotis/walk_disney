@@ -24,22 +24,42 @@
             <div class="col">
                 <h3>Dining</h3>
                 <p>${plan.restaurant_name}</p>
+                <a href="${plan.menu}" target="_blank" class="btn btn-primary">VIEW MENU</a>
             </div>
+            <form action="itinerary/update" method="POST">
+                <input type="hidden" name="activity_id" value="${plan.activity_id}">
+                <button type="submit" class="btn btn-primary">DELETE DAY</button>
+            </form>
         </div>
             `
         
         ).join('')}
+        `
+        :
+        `<h2>Start Planning Your Trip by Going to the Park Selector Page!</h2>
+        <button>SELECT A PARK</button>`
+    }  
+    
 
-        <h2>Your Lodging</h2>
+        <h2 class="lodging-title">Your Lodging</h2>
 
+        ${lodging_data.length > 0 ? 
+            `
         ${lodging_data.map (hotel => 
             `
             <div class="row itinerary-row">
                 <div class="col">
                     <h3>${hotel.lodging_name}</h3>
                     <img src="${hotel.lodging_image}" class="lodging-image" alt="image of the chosen resort">
-                    <a href="${hotel.lodging_url}" class="btn btn-primary" target="_blank">Website</a>
 
+                    <div class="button-container">
+                        <a href="${hotel.lodging_url}" class="btn btn-primary delete-btn" target="_blank">VISIT WEBSITE</a> 
+
+                        <form action="itinerary/delete_lodging" method="POST">
+                            <input type = "hidden" name="lodging_id" value="${hotel.lodging_id}">
+                            <button type="submit" class="btn btn-primary delete-btn">DELETE HOTEL</button>
+                        </form>
+                    </div>
                 </div>
 
 
@@ -47,13 +67,10 @@
         
             `
             ).join('')}
-
-
-        `
-        :
-        `<h2>Start Planning Your Trip by Going to the Park Selector Page!</h2>
-        <button>SELECT A PARK</button>`
-    
-    }
+            `
+            :
+            `<h2>Your selected lodging will appear here!</h2>`
+        }
+        
 </div>
 </div>

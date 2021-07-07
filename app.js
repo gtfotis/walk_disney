@@ -35,8 +35,11 @@ const activitiesController = require('./routes/activities');
 const itineraryController = require('./routes/itinerary');
 const parkSelectorController = require('./routes/park_selector');
 const userController = require('./routes/users');
+const errorController = require('./routes/404');
+
 app.use('/', rootController);
 app.use('/activities', activitiesController);
 app.use('/itinerary', itineraryController);
 app.use('/park_selector', parkSelectorController);
 app.use('/users', userController);
+app.use('*', errorController);
