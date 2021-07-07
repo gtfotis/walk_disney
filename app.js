@@ -31,7 +31,7 @@ server.listen(port, hostname, () => {
 });
 
 const rootController = require('./routes/index');
-const activitiesController = require('./routes/activities');
+const activitiesController = require('./routes/park_activities');
 const itineraryController = require('./routes/itinerary');
 const parkSelectorController = require('./routes/park_selector');
 const userController = require('./routes/users');
