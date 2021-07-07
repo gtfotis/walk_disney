@@ -17,4 +17,20 @@ class Activities {
             return error;
         }
     }
+
+    static async addActivity(plan_id, activity_id) {
+        try {
+            console.log('PLAN ID:', plan_id);
+            console.log('ACTIVITY ID:', activity_id);
+            const query = (`UPDATE plan set activity_id = ${activity_id} WHERE id = ${plan_id}`);
+            const response = await db.result(query);
+            return response;
+
+        } catch (error) {
+            console.error('ERROR: ', error);
+            return error;
+        }
+    }
 }
+
+module.exports = Activities;
