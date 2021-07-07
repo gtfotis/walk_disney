@@ -2,7 +2,7 @@
 <ul>
     ${data.map(park => `
     <li>
-        <a href='./park_selector/${park.slug}'><img src=''>${park.park_name}
+        <a href='./park_selector/${park.slug}'>${park.park_name}<br><img src='${park.park_image}' width='500'>
         </a>`).join('')}
     </li>
 </ul>
