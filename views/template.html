@@ -33,9 +33,17 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/">Activities</a>
                 </li>
+                ${!!is_logged_in ?
+                ` <li class="nav-item" background-color="white">
+                    <a class="nav-link" href="/users/logout">Logout</a>
+                </li>`
+                :
+                `
                 <li class="nav-item" background-color="white">
                     <a class="nav-link" href="/users/register">Register</a>
                 </li>
+                `
+                }
             </ul>
         </div>
     </div>
