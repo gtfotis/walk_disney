@@ -46,6 +46,7 @@ router.post('/register', async (req, res) => {
 
 router.post('/login', async (req, res) => {
     const { user_email, user_password } = req.body;
+    console.log(user_email, user_password)
     const user = new UsersModel(null, null, null, user_email, user_password)
     const response = await user.login();
 
