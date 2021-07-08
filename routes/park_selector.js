@@ -2,7 +2,6 @@
 const express = require('express');
 const router = express.Router();
 const ParkSelectorModel = require('../models/ParkSelectorModel');
-const ActivitiesModel = require('../models/ParkActivitiesModel');
 
 router.get('/:slug?', async(req, res) => {
     if (!!req.params.slug) {
@@ -12,7 +11,8 @@ router.get('/:slug?', async(req, res) => {
         res.render('template', {
             locals: {
                 title: 'Make a Plan',
-                data: theParkData
+                data: theParkData,
+                parkId: thePark.id
             },
             partials: {
                 body: 'partials/park_activities'
@@ -42,7 +42,6 @@ router.post('/update', async (req, res) => {
     const response = await newItinerary.addParkId();
 
     if (!!response.id) {
-        // Directs to the appropriate park's activities page.
         req.session.plan_id = response.id;
         res.redirect(`/park_selector/${park_slug}`);
     } else {

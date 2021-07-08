@@ -19,12 +19,13 @@ router.get('/', async (req, res) => {
 });
 
 router.post('/add_activity', async (req, res) => {
-    const { plan_id } = req.session; //works but for right now the user has to immediately choose their activity after choosing their park they can't go to another page and then back?
+    const { plan_id } = req.session; 
     console.log('REQ SESSION IS: ', req.session);
-    const { activity_id } = req.body;
+    const { activity_id, park_id } = req.body;
+
     const response = await ActivitiesModel.addActivity(plan_id, activity_id);
     console.log('ADD ACTIVITY RESPONSE IS: ', response);
-    res.redirect('back');
+    res.redirect(`/dining/${park_id}`);
 
 });
 

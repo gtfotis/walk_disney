@@ -14,9 +14,9 @@ class Itinerary {
         try {
             const query = (`SELECT * FROM plan 
             INNER JOIN users on users.id = plan.user_id
-            INNER JOIN parks on parks.id = plan.parks_id
-            INNER JOIN activities on activities.id = plan.activity_id
-            INNER JOIN food on food.id = plan.food_id
+            FULL JOIN parks on parks.id = plan.parks_id
+            FULL JOIN activities on activities.id = plan.activity_id
+            FULL JOIN food on food.id = plan.food_id
             WHERE plan.user_id = ${user_id};
             `)
             const response = await db.any(query)
