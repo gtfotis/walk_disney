@@ -4,18 +4,11 @@
     <li>
         <h3>${todo.activity_name}</h3>
         <p>${todo.activity_description}</p>
-        <img src="${todo.activity_image}" alt="Image of ${todo.activity_name}">
+        <img src="${todo.activity_image}" alt="Image of ${todo.activity_name}" width=20%>
         <p>Time Slot: ${todo.activity_time}</p>
-        <p>Kid Friendly: ${!!todo.kid_friendly ? 
-            `Yes`
-        :
-            `No`
-        }</p>
-        <p>Height Requirement: ${todo.height_requirement !== null ? 
-            `${todo.height_requirement}`
-            :
-            `None`
-        } 
+        <p>Kid Friendly: ${!!todo.kid_friendly ? `Yes` : `No` }
+        </p>
+        <p>Height Requirement: ${todo.height_requirement !== null ? `${todo.height_requirement}` : `None` }
         </p>
     </li>
     <form action="/park_activities/add_activity" method="POST">
@@ -25,7 +18,7 @@
 
 
     </form>
-    
+
     `).join('')}
 
 </ul>
