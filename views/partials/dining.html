@@ -1,18 +1,32 @@
-<h2>Dining Page</h2>
+<div class="container">
+    ${!!is_logged_in ? 
+        `<h1 class="main-title">Choose Your Dining</h1>
 
-
-${diningData.map (restaurant => 
-    `<div>
-        <h2>${restaurant.restaurant_name}</h2>
-        <p>${restaurant.price_range}</p>
-        <p>${restaurant.cuisine}</p>
-        <a href="${restaurant.menu}" target="_blank" class="btn btn-primary">VIEW MENU</a>
-
-        <form action="/dining/add" method="POST">
-            <input type="hidden" name="dining_id" value="${restaurant.id}">
-            <input type="hidden" name="park_id" value="${restaurant.park_id}">
-            <button type="submit" class="btn btn-primary">SELECT</button>
-        </form>
-    </div> `
+        <div class="row align-items-start">
     
-    ).join('')}
+            ${diningData.map (restaurant => 
+                `<div class="col-6">
+                    <h2>${restaurant.restaurant_name}</h2>
+                    <p>${restaurant.price_range}</p>
+                    <p>${restaurant.cuisine}</p>
+                    <div class="button-container">
+                        <a href="${restaurant.menu}" target="_blank" class="primary-button">VIEW MENU</a>
+    
+                        <form action="/dining/add" method="POST">
+                            <input type="hidden" name="dining_id" value="${restaurant.id}">
+                            <input type="hidden" name="park_id" value="${restaurant.park_id}">
+                            <button type="submit" class="primary-button">SELECT</button>
+                        </form>
+                    </div>
+                </div> `
+                
+                ).join('')}
+        </div>
+        `
+        :
+        `<h3>Login to add restaurants to your Itinerary</h3>
+        <a href="/users/login" class="primary-button">LOGIN</a>`
+    
+    }
+    
+</div>

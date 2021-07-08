@@ -213,11 +213,22 @@ button.primary-button:hover {
     border: 0px;
 }
 
-h2  {
+h2,h3  {
     padding-bottom: 10px;
     color: white;
 }
 
 .park-image {
     width: 500px;
+    padding-bottom: 20px;
+}
+
+.activity-image {
+    width: 400px;
+}
+
+.main-title {
+    color: white;
+    padding-bottom:30px;
+    
 }
