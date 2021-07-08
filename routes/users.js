@@ -59,7 +59,7 @@ router.post('/login', async (req, res) => {
         req.session.first_name = first_name;
         req.session.last_name = last_name;
 
-        res.redirect('/');
+        res.redirect('/park_selector');
 
     } else {
         res.sendStatus(403);

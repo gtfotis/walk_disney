@@ -26,7 +26,7 @@ router.post('/add', async (req, res) => {
     const { dining_id, park_id } = req.body;
     const response = await DiningModel.addDining(plan_id, dining_id);
     console.log('DINING RESPONSE IS: ', response);
-    res.redirect(`/`);
+    res.redirect(`/lodging/${ park_id}`);
 });
 
 

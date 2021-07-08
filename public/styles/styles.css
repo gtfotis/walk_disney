@@ -2,6 +2,10 @@ body {
     background-color: rgb(42, 42, 92); 
 }
 
+p { 
+    color: white;
+}
+
 a {
     text-decoration: none;
 }
@@ -78,6 +82,11 @@ a:hover {
     margin-top: 50px;
 }
 
+.login-box h2 {
+    text-align: center;
+    color: rgb(42, 42, 92);
+}
+
 /* NAVIGATION BAR ITEMS */
 
 .customHeader {
@@ -145,6 +154,9 @@ a:hover {
     padding: 70px;
 }
 
+
+/* Itinerary Styles */
+
 .itinerary-row {
     margin-top: 15px;
 }
@@ -159,7 +171,6 @@ a:hover {
 }
 
 .lodging-title {
-    color: navy;
     margin-top: 30px;
 }
 
@@ -181,4 +192,32 @@ a:hover {
 
 .hideThings {
     display: none;
+
+.primary-button {
+    background-color: white;
+    color:  rgb(42, 42, 92);
+    margin-top: 5px;
+    padding: 10px 15px;
+    border-radius: 20px;
+    border: 0px;
+}
+
+a.primary-button:hover {
+    color: rgb(42, 42, 92);
+    font-weight: bold;
+}
+
+button.primary-button:hover {
+    color: rgb(42, 42, 92);
+    font-weight: bold;
+    border: 0px;
+}
+
+h2  {
+    padding-bottom: 10px;
+    color: white;
+}
+
+.park-image {
+    width: 500px;
 }
