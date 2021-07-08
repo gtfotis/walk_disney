@@ -40,6 +40,12 @@ a:hover {
     border-radius: 10px; 
 }
 
+@media screen and (max-width: 840px) {
+    .carousel {
+         display: none;
+     }
+ }
+
 .bodyAlignment {
     display: flex;
     flex-direction: row;
@@ -63,7 +69,7 @@ a:hover {
     font-size: 20px;
 }
 .login-text > *{
-    margin-top: 40px;
+    margin-top: 20px;
     margin-left: 40px;
     margin-right: 40px;
 }
@@ -155,4 +161,24 @@ a:hover {
 .lodging-title {
     color: navy;
     margin-top: 30px;
+}
+
+/* REGISTER ITEMS */
+
+.registerRow {
+    display: flex;
+    margin: 80px;
+}
+  
+.registerColumn {
+    background-color: white;
+    height: 500px;
+    flex: 50%;
+    padding: 70px;
+}
+
+/* It's a secret. */
+
+.hideThings {
+    display: none;
 }
