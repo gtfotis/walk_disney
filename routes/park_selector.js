@@ -13,7 +13,8 @@ router.get('/:slug?', async(req, res) => {
                 title: 'Make a Plan',
                 data: theParkData,
                 parkId: thePark.id,
-                is_logged_in: req.session.is_logged_in
+                is_logged_in: req.session.is_logged_in,
+                user_id: req.session.user
             },
             partials: {
                 body: 'partials/park_activities'
@@ -24,7 +25,8 @@ router.get('/:slug?', async(req, res) => {
         res.render('template', {
             locals: {
                 title: 'Select a Park',
-                data: parkData
+                data: parkData,
+                is_logged_in: req.session.is_logged_in
             },
             partials: {
                 body: 'partials/park_selector'
@@ -37,8 +39,7 @@ router.get('/:slug?', async(req, res) => {
 router.post('/update', async (req, res) => {
     const { parks_id, park_slug } = req.body;
     console.log('REQ BODY IS: ', req.body);
-    const user_id = 1; //this will also have to change!!
-    
+    const user_id = req.session.user_id;
     const newItinerary = new ParkSelectorModel(null, user_id, parks_id, null, null, null);
     const response = await newItinerary.addParkId();
 

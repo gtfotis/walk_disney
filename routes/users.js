@@ -7,6 +7,7 @@ router.get('/register', (req, res) => {
     res.render('template', {
         locals: {
             title: 'Register',
+            is_logged_in: req.session.is_logged_in
         },
         partials: {
             body: 'partials/register'
@@ -18,6 +19,7 @@ router.get('/login', (req, res) => {
     res.render('template', {
         locals: {
             title: 'Login',
+            is_logged_in: req.session.is_logged_in
         },
         partials: {
             body: 'partials/login'
@@ -57,7 +59,7 @@ router.post('/login', async (req, res) => {
         req.session.first_name = first_name;
         req.session.last_name = last_name;
 
-        res.redirect('/');
+        res.redirect('/park_selector');
 
     } else {
         res.sendStatus(403);

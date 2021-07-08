@@ -3,12 +3,12 @@
     ${data.map(park => `
     <li>
         <h2>${park.park_name}</h2>
-        <img src='${park.park_image}' width='500'>
+        <img src='${park.park_image}' class="park-image">
         </a>
         <form action="park_selector/update" method="POST">
             <input type="hidden" name="parks_id" value="${park.id}">
             <input type="hidden" name="park_slug" value="${park.slug}">
-            <a href="./park_selector/${park.slug}"><button type="submit" class="btn btn-primary">SELECT PARK</button></a>
+            <a href="./park_selector/${park.slug}"><button type="submit" class="primary-button">SELECT PARK</button></a>
             </form>
        
         `).join('')}
