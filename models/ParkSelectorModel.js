@@ -53,8 +53,8 @@ class ParkSelectorModel {
                 (user_id, parks_id, activity_id, food_id, lodging_id) 
                 VALUES 
                 (${this.user_id}, ${this.parks_id}, ${this.activity_id}, ${this.food_id}, ${this.lodging_id}) 
-                ;`);
-            const response = await db.result(query);
+               RETURNING id;`);
+            const response = await db.one(query);
             return response;
 
         } catch(error) {

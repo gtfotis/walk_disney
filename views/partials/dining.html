@@ -1,0 +1,18 @@
+<h2>Dining Page</h2>
+
+
+${diningData.map (restaurant => 
+    `<div>
+        <h2>${restaurant.restaurant_name}</h2>
+        <p>${restaurant.price_range}</p>
+        <p>${restaurant.cuisine}</p>
+        <a href="${restaurant.menu}" target="_blank" class="btn btn-primary">VIEW MENU</a>
+
+        <form action="/dining/add" method="POST">
+            <input type="hidden" name="dining_id" value="${restaurant.id}">
+            <input type="hidden" name="park_id" value="${restaurant.park_id}">
+            <button type="submit" class="btn btn-primary">SELECT</button>
+        </form>
+    </div> `
+    
+    ).join('')}
