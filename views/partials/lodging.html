@@ -1,17 +1,31 @@
-<h1>LODGING PAGE</h1>
+<div class="container">
 
-${lodgingData.map (hotel =>
-    `
-    <div>
-        <h3>${hotel.lodging_name}</h3>
-        <img src="${hotel.lodging_image}" alt="image of ${hotel.lodging_name}">
-        <a href="${hotel.lodging_url}" target="_blank" class="btn btn-primary">VISIT WEBSITE</a>
-        
-        <form action="/lodging/add" method="POST">
-            <input type="hidden" name="lodging_id" value="${hotel.id}">
-            <button type="submit" class="btn btn-primary">SELECT</button>
-        </form>
-    </div>
-    `
+    ${!!is_logged_in ?
+        `<h1 class="main-title">Choose Your Lodging</h1>
+        <div class="row align-items-start">
+            ${lodgingData.map (hotel =>
+                `
+                <div class="col">
+                    <h3>${hotel.lodging_name}</h3>
+                    <img src="${hotel.lodging_image}" alt="image of ${hotel.lodging_name}" class="park-image">
+                    <div class="button-container">
+                        <a href="${hotel.lodging_url}" target="_blank" class="primary-button">VISIT WEBSITE</a>
+                    
+                        <form action="/lodging/add" method="POST">
+                            <input type="hidden" name="lodging_id" value="${hotel.id}">
+                            <button type="submit" class="primary-button">SELECT</button>
+                        </form>
+                    </div>
+                
+                `   
+                ).join('')}
+                
+            </div>`
     
-    ).join('')}
+    :
+    `<h3>Login to add a hotel to your Itinerary</h3>
+    <a href="/users/login" class="primary-button">LOGIN</a>`
+}
+   
+
+</div>
