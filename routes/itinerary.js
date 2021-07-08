@@ -4,17 +4,18 @@ const router = express.Router();
 const ItineraryModel = require('../models/ItineraryModel');
 
 router.get('/', async (req, res) => {
-    const user_id = req.session.user_id; // Change this with req.session.user_id once in the code. 
+    const user_id = req.session.user_id;
     const theItinerary = await ItineraryModel.getPlan(user_id);
     const lodgingData = await ItineraryModel.getLodging(user_id);
     res.render('template', {
         locals: {
             title: 'Final Itinerary',
-            // user_id: 1, // replace with req.session.user_id once in the code.
             itinerary_data: theItinerary,
             lodging_data: lodgingData,
             is_logged_in: req.session.is_logged_in,
-            user_id: req.session.user
+            user_id: req.session.user,
+            first_name: req.session.first_name
+       
         },
         partials: {
             body: 'partials/itinerary'

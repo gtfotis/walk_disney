@@ -1,24 +1,45 @@
-<h1>Choose Your Activities!</h1>
-<ul>
-    ${data.map(todo => `
-    <li>
-        <h3>${todo.activity_name}</h3>
-        <p>${todo.activity_description}</p>
-        <img src="${todo.activity_image}" alt="Image of ${todo.activity_name}" width=20%>
-        <p>Time Slot: ${todo.activity_time}</p>
-        <p>Kid Friendly: ${!!todo.kid_friendly ? `Yes` : `No` }
-        </p>
-        <p>Height Requirement: ${todo.height_requirement !== null ? `${todo.height_requirement}` : `None` }
-        </p>
-    </li>
-    <form action="/park_activities/add_activity" method="POST">
-        <input type="hidden" name="activity_id" value="${todo.id}">
-        <input type="hidden" name="park_id" value="${todo.park_id}">
-        <button type="submit" class="btn btn-primary">SELECT</button>
+
+<div class="container">
+    ${!!is_logged_in ?
+        `
+        <h1 class="main-title">Choose Your Activities!</h1>
+
+        <div class="row align-items-start">
+            ${data.map(todo => `
+                <div class="col">
+                <h3>${todo.activity_name}</h3>
+                <p>${todo.activity_description}</p>
+                <img src="${todo.activity_image}" alt="Image of ${todo.activity_name}" class="activity-image">
+                <p>Time Slot: ${todo.activity_time}</p>
+                <p>Kid Friendly: ${!!todo.kid_friendly ? 
+                    `Yes`
+                :
+                    `No`
+                }</p>
+                
+                <p>Height Requirement: ${todo.height_requirement !== null ? 
+                    `${todo.height_requirement}`
+                    :
+                    `None`
+                } 
+                </p>
+            <form action="/park_activities/add_activity" method="POST">
+                <input type="hidden" name="activity_id" value="${todo.id}">
+                <input type="hidden" name="park_id" value="${todo.park_id}">
+                <button type="submit" class="primary-button">SELECT</button>
 
 
-    </form>
+             </form>
+        </div>
+        
+        `).join('')}
+        `
+        :
+        `<h2>Login to view and select activites!</h2>
+        <a href="/users/login" class="primary-button">LOGIN</a>
+        `
+    
+    }
+    
 
-    `).join('')}
-
-</ul>
+</div>
