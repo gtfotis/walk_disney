@@ -44,11 +44,6 @@ a:hover {
     border-radius: 10px; 
 }
 
-@media screen and (max-width: 840px) {
-    .carousel {
-         display: none;
-     }
- }
 
 .bodyAlignment {
     display: flex;
@@ -192,6 +187,7 @@ a:hover {
 
 .hideThings {
     display: none;
+}
 
 .primary-button {
     background-color: white;
@@ -220,6 +216,17 @@ h2,h3  {
 
 .park-image {
     width: 500px;
+}
+
+@media screen and (max-width: 840px) {
+    .carousel {
+         display: none;
+     }
+     .login-box {
+        margin-left: auto;
+        margin-right: auto;
+    }
+ }
     padding-bottom: 20px;
 }
 
