@@ -13,6 +13,11 @@ a {
 a:hover {
     text-decoration: none;
 }
+
+h2,h3,h4  {
+    padding-bottom: 10px;
+    color: white;
+}
   
 /* Itinerary Page Styles */
 .park-image {
@@ -192,7 +197,7 @@ a:hover {
 
 .hideThings {
     display: none;
-
+}
 .primary-button {
     background-color: white;
     color:  rgb(42, 42, 92);
@@ -211,11 +216,6 @@ button.primary-button:hover {
     color: rgb(42, 42, 92);
     font-weight: bold;
     border: 0px;
-}
-
-h2,h3  {
-    padding-bottom: 10px;
-    color: white;
 }
 
 .park-image {

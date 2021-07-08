@@ -1,87 +1,142 @@
 <div class="container">
+    ${!!is_logged_in ? 
+        `   
+            <h1 class="main-title">${first_name}'s Itinerary</h1>
+            ${itinerary_data.length > 0 ?
+                `
+                <div class="row align-items-start ">
+                    <div class="col">
+                        <h2>Magic Kingdom</h2>
+                        <img src="imgs/magic_kingdom.jpeg" class="park-image">
+                    </div>
+                    <div class="col">
+                        <h3>Activities</h3>
+                        ${itinerary_data.map (activity =>
+                            `${activity.park_id === 1 ? 
+                                `
+                                <h4>${activity.activity_name}</h4>
+                                <p>Time: ${activity.activity_time}</p>
+                                <button>Remove Activity</button>
+                                
+                                `
+                                :
+                                ``
+                            
+                            }`
+                            
+                            ).join('')}
+                    </div>
+                    <div class="col">
+                        <h3>Dining</h3>
+                        ${itinerary_data.map (restaurant =>
+                            `${restaurant.park_id === 1 ? 
+                                `
+                                <h4>${restaurant.restaurant_name}</h4>
+                                <a href="${restaurant.menu}">MENU</a>
+                                
+                                `
+                                :
+                                ``
+                            
+                            }`
+                            
+                            ).join('')}
+                    </div>
 
-${!!is_logged_in ? 
-`    
-<h1 class="main-title">${first_name}'s Itinerary!</h1>
-<div class="container">
-    ${itinerary_data.length > 0 ? 
-        `
-        ${itinerary_data.map (plan => 
-            `  
-        <div class="row itinerary-row">
-            <div class="col">
-                <h2>${plan.park_name}</h2>
-                <img src="${plan.park_image}" class="park-image">
+                </div>
 
-            </div>
-            <div class="col">
-                <h3>Activities</h3>
-                <h4>${plan.activity_name}</h4>
-                <p>Time: ${plan.activity_time}</p>
-                <p>${plan.activity_description}</p>
+                <!-- ANIMAL KINGDOM -->
+                <div class="row align-items-start">
+                    <div class="col">
+                        <h2>Animal Kingdom</h2>
+                        <img src="imgs/animal_kingdom.jpeg" class="park-image">
+                    </div>
+                    <div class="col">
+                        <h3>Activities</h3>
+                        ${itinerary_data.map (activity =>
+                            `${activity.park_id === 2 ? 
+                                `
+                                <h4>${activity.activity_name}</h4>
+                                <p>Time: ${activity.activity_time}</p>
+                                
+                                `
+                                :
+                                ``
+                            
+                            }`
+                            
+                            ).join('')}
 
-            </div>
-            <div class="col">
-                <h3>Dining</h3>
-                <p>${plan.restaurant_name}</p>
-                <a href="${plan.menu}" target="_blank" class="btn btn-primary">VIEW MENU</a>
-            </div>
-            <form action="itinerary/update" method="POST">
-                <input type="hidden" name="activity_id" value="${plan.activity_id}">
-                <button type="submit" class="btn btn-primary">DELETE DAY</button>
-            </form>
-        </div>
-            `
-        
-        ).join('')}
-        `
-        :
-        `<h2>Start Planning Your Trip by Going to the Park Selector Page!</h2>
-        <button>SELECT A PARK</button>`
-    }  
-    
-
-        <h2 class="lodging-title">Your Lodging</h2>
-
-        ${lodging_data.length > 0 ? 
-            `
-        ${lodging_data.map (hotel => 
-            `
-            <div class="row itinerary-row">
-                <div class="col">
-                    <h3>${hotel.lodging_name}</h3>
-                    <img src="${hotel.lodging_image}" class="lodging-image" alt="image of the chosen resort">
-
-                    <div class="button-container">
-                        <a href="${hotel.lodging_url}" class="btn btn-primary delete-btn" target="_blank">VISIT WEBSITE</a> 
-
-                        <form action="itinerary/delete_lodging" method="POST">
-                            <input type = "hidden" name="lodging_id" value="${hotel.lodging_id}">
-                            <button type="submit" class="btn btn-primary delete-btn">DELETE HOTEL</button>
-                        </form>
                     </div>
                 </div>
 
+                <!-- Epcot -->
+                <div class="row align-items-start">
+                    <div class="col">
+                        <h2>Epcot</h2>
+                        <img src="imgs/epcot.jpeg" class="park-image">
+                    </div>
+                    <div class="col">
+                        <h3>Activities</h3>
+                        ${itinerary_data.map (activity =>
+                            `${activity.park_id === 3 ? 
+                                `
+                                <h4>${activity.activity_name}</h4>
+                                <p>Time: ${activity.activity_time}</p>
+                                
+                                `
+                                :
+                                ``
+                            
+                            }`
+                            
+                            ).join('')}
 
-            </div>
+                    </div>
+                </div>
+
+                 <!-- Hollywood Studios -->
+                 <div class="row align-items-start">
+                    <div class="col">
+                        <h2>Hollywood Studios</h2>
+                        <img src="imgs/hollywood_studios.jpeg" class="park-image">
+                    </div>
+                    <div class="col">
+                        <h3>Activities</h3>
+                        ${itinerary_data.map (activity =>
+                            `${activity.park_id === 4 ? 
+                                `
+                                <h4>${activity.activity_name}</h4>
+                                <p>Time: ${activity.activity_time}</p>
+                                
+                                `
+                                :
+                                ``
+                            
+                            }`
+                            
+                            ).join('')}
+
+                    </div>
+                </div>
+                    
+                
+                `
+                :
+
+                `<h2>Start Planning Your Trip by Going to the Park Selector Page!</h2>
+                <button>SELECT A PARK</button>`
+            }
         
-            `
-            ).join('')}
-            `
-            :
-            `<h2>Your selected lodging will appear here!</h2>`
-        }
-
+        
+        
+        
+        
+        
         `
-
         :
-
         `<h2>Sign Up or Login to Create Your Itinerary</h2>
-        <a href="users/register" class="primary-button">REGISTER</a>
-        
-    
-</div> `
-
-}
+        <a href="users/register" class="primary-button">REGISTER</a>`
+    }
 
 </div>
