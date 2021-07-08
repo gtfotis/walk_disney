@@ -35,7 +35,8 @@ const activitiesController = require('./routes/park_activities');
 const itineraryController = require('./routes/itinerary');
 const parkSelectorController = require('./routes/park_selector');
 const userController = require('./routes/users');
-const diningController = require('./routes/dining')
+const diningController = require('./routes/dining');
+const lodgingController = require('./routes/lodging');
 const errorController = require('./routes/404');
 
 app.use('/', rootController);
@@ -44,4 +45,5 @@ app.use('/itinerary', itineraryController);
 app.use('/park_selector', parkSelectorController);
 app.use('/users', userController);
 app.use('/dining', diningController);
+app.use('/lodging', lodgingController);
 app.use('*', errorController);
