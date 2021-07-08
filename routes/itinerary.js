@@ -12,7 +12,8 @@ router.get('/', async (req, res) => {
             title: 'Final Itinerary',
             user_id: 1, // replace with req.session.user_id once in the code.
             itinerary_data: theItinerary,
-            lodging_data: lodgingData
+            lodging_data: lodgingData,
+            is_logged_in: req.session.is_logged_in
         },
         partials: {
             body: 'partials/itinerary'

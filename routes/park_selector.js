@@ -12,7 +12,8 @@ router.get('/:slug?', async(req, res) => {
             locals: {
                 title: 'Make a Plan',
                 data: theParkData,
-                parkId: thePark.id
+                parkId: thePark.id,
+                is_logged_in: req.session.is_logged_in
             },
             partials: {
                 body: 'partials/park_activities'

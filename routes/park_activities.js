@@ -10,7 +10,8 @@ router.get('/', async (req, res) => {
     res.render('template', {
         locals: {
             title: 'Select Activities',
-            thePark: thePark
+            thePark: thePark,
+            is_logged_in: req.session.is_logged_in
         },
         partials: {
             body: 'partials/park_activities'
