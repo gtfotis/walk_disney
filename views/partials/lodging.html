@@ -1,0 +1,17 @@
+<h1>LODGING PAGE</h1>
+
+${lodgingData.map (hotel =>
+    `
+    <div>
+        <h3>${hotel.lodging_name}</h3>
+        <img src="${hotel.lodging_image}" alt="image of ${hotel.lodging_name}">
+        <a href="${hotel.lodging_url}" target="_blank" class="btn btn-primary">VISIT WEBSITE</a>
+        
+        <form action="/lodging/add" method="POST">
+            <input type="hidden" name="lodging_id" value="${hotel.id}">
+            <button type="submit" class="btn btn-primary">SELECT</button>
+        </form>
+    </div>
+    `
+    
+    ).join('')}
