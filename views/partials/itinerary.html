@@ -2,6 +2,8 @@
 
 <h1>Itinerary page!</h1>
 
+${!!is_logged_in ? 
+`    
 
 <div class="container">
     ${itinerary_data.length > 0 ? 
@@ -71,6 +73,17 @@
             :
             `<h2>Your selected lodging will appear here!</h2>`
         }
+
+        `
+
+        :
+
+        `<h2>Sign Up or Login to Create Your Itinerary</h2>
+        <a href="users/register" class="primary-button">REGISTER</a>
         
-</div>
+    
+</div> `
+
+}
+
 </div>

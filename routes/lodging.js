@@ -10,7 +10,8 @@ router.get('/:id', async (req, res) => {
     res.render('template', {
         locals: {
             title: 'Lodging Page',
-            lodgingData: lodging
+            lodgingData: lodging,
+            is_logged_in: req.session.is_logged_in
         },
         partials: {
             body: 'partials/lodging'
