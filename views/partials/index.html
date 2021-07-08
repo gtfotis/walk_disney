@@ -30,8 +30,8 @@
 
     <!-- SIGN-IN FORM -->
     <div class="login-box">
-        <h2>Sign-in</h2>
-        <form action="/users/login" method="POST" class="login-text">
+        <form action="/users/login" method="POST" class="login-text" id="logForm">
+            <p>Sign-in</p>
             <div class="form-group">
                 <label for="exampleInputEmail1">Email address</label>
                 <input name="user_email" type="email" class="form-control" id="exampleInputEmail1"
@@ -45,9 +45,32 @@
             <center>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </center>
-            <small class="form-text text-muted">Not a member? <a href="/users/register">Sign up here!</a></small>
+            <small class="form-text text-muted">Not a member? <a href="#" id="registration">Sign up
+                    here!</a></small>
+        </form>
+
+        <!-- REGISTRATION FORM -->
+
+        <form action="/users/register" method="POST" class="hideThings" id="regForm">
+            <h2>Register</h2>
+            <label>First Name
+                <input name="first_name" class="form-control" type="text">
+            </label>
+            <label>Last Name
+                <input name="last_name" class="form-control" type="text">
+            </label>
+            <label>Email
+                <input name="user_email" class="form-control" type="email">
+            </label>
+            <br>
+            <label>Password
+                <input name="user_password" class="form-control" type="password">
+            </label>
+            <br>
+            <button type="submit" class="btn btn-primary">Register</button>
         </form>
     </div>
+
 </div>
 
 <!-- EXTRA TEXT BOXES -->
@@ -84,3 +107,5 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
+
+<script src="hidden.js"></script>
