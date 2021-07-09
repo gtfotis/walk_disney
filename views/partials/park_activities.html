@@ -3,6 +3,14 @@
     ${!!is_logged_in ?
         `
         <h1 class="main-title">Choose Your Activities!</h1>
+        <p>We recommend picking at least three activities per park. When You're done selecting activities, click the button below to move on to food choices. Or skip food selection and jump straight to your itinerary!</p>
+        <div class="button-container">
+            <form action="/park_activities/dining" method="POST">
+                <input type="hidden" name="park_id" value="${parkId}">
+                <button type="submit" class="remove-activity">Go to Dining</button>
+            </form>
+            <a href="/itinerary" class="remove-activity">View Itinerary</a>
+        </div>
 
         <div class="row align-items-start">
             ${data.map(todo => `
@@ -26,7 +34,7 @@
             <form action="/park_activities/add_activity" method="POST">
                 <input type="hidden" name="activity_id" value="${todo.id}">
                 <input type="hidden" name="park_id" value="${todo.park_id}">
-                <button type="submit" class="primary-button">SELECT</button>
+                <button type="submit" class="primary-button">Add to Itinerary</button>
 
 
              </form>

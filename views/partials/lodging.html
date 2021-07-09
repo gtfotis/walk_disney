@@ -2,6 +2,12 @@
 
     ${!!is_logged_in ?
         `<h1 class="main-title">Choose Your Lodging</h1>
+        <p>We've handpicked some of the top-rated lodging for this park. Visit the hotel's website to check availability and make your reservation.</p>
+        <div class="button-container">
+            <a href="/park_selector" class="remove-activity">Add Another Park</a>
+            <a href="/itinerary" class="remove-activity">View Itinerary</a>
+        </div>
+
         <div class="row align-items-start">
             ${lodgingData.map (hotel =>
                 `
@@ -9,11 +15,10 @@
                     <h3>${hotel.lodging_name}</h3>
                     <img src="${hotel.lodging_image}" alt="image of ${hotel.lodging_name}" class="park-image">
                     <div class="button-container">
-                        <a href="${hotel.lodging_url}" target="_blank" class="primary-button">VISIT WEBSITE</a>
-                    
+                        <a href="${hotel.lodging_url}" target="_blank" class="remove-activity">Visit Website</a>
                         <form action="/lodging/add" method="POST">
                             <input type="hidden" name="lodging_id" value="${hotel.id}">
-                            <button type="submit" class="primary-button">SELECT</button>
+                            <button type="submit" class="remove-activity">Add to Itinerary</button>
                         </form>
                     </div>
                 

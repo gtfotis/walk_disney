@@ -5,13 +5,16 @@ const DiningModel = require('../models/DiningModel');
 
 router.get('/:id', async (req, res) => {
     const { id } = req.params;
+    console.log('DINING ID: ',id);
+    const park_id = id;
     const diningChoices = await DiningModel.getDining(id);
     console.log('DINING: ', diningChoices)
     res.render('template', {
         locals: {
             title: 'Dining Selection',
             diningData: diningChoices,
-            is_logged_in: req.session.is_logged_in
+            is_logged_in: req.session.is_logged_in,
+            park_id: park_id
         },
         partials: {
             body: 'partials/dining'
@@ -22,11 +25,19 @@ router.get('/:id', async (req, res) => {
 
 
 router.post('/add', async (req, res) => {
-    const { plan_id } = req.session;
+    // const { plan_id } = req.session;
     const { dining_id, park_id } = req.body;
-    const response = await DiningModel.addDining(plan_id, dining_id);
+    const user_id = req.session.user_id;
+    const response = await DiningModel.addDining(user_id, dining_id, park_id);
     console.log('DINING RESPONSE IS: ', response);
-    res.redirect(`/lodging/${ park_id}`);
+    res.redirect('back');
+
+});
+
+router.post('/move_to_lodging', (req, res) => {
+    const { park_id } = req.body;
+    console.log("PARK ID REQ BODY FOR DINING: ", req.body);
+    res.redirect(`/lodging/${park_id}`);
 });
 
 
