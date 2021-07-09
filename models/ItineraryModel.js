@@ -43,11 +43,11 @@ class Itinerary {
     }
     
 
-    static async removeActivity(activity_id) {
+    static async removeActivity(activity_id, user_id) {
         try {
-            // Sets to null so the lodging is unaffected
+            // Sets to null rather than deleting so the lodging and other stuff is not affectted
             const query = (`
-            UPDATE plan SET parks_id = null, activity_id = null, food_id = null WHERE activity_id = ${activity_id};
+            UPDATE plan SET activity_id = null WHERE activity_id = ${activity_id} AND user_id = ${user_id};
             `);
             console.log(query);
             const response = await db.any(query);
@@ -59,16 +59,28 @@ class Itinerary {
         }
     }
 
-    static async removeLodging(lodging_id) {
+    static async removeLodging(lodging_id, user_id) {
         try {
             //Sets to null in case they only want to delete lodging.
-            const query = (`UPDATE plan SET lodging_id = null WHERE lodging_id = ${lodging_id};`);
+            const query = (`UPDATE plan SET lodging_id = null WHERE lodging_id = ${lodging_id} AND user_id = ${user_id};`);
             const response = await db.any(query);
             return response;
 
 
         } catch(error) {
             console.error('ERROR: ', error)
+            return error;
+        }
+    }
+
+    static async removeFood(food_id, user_id) {
+        try{
+            const query = (`UPDATE plan SET food_id = null WHERE food_id = ${food_id} AND user_id = ${user_id};`);
+            const response = await db.any(query);
+            return response;
+
+        } catch(error) {
+            console.error('ERROR: ', error);
             return error;
         }
     }

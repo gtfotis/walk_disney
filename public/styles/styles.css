@@ -13,6 +13,11 @@ a {
 a:hover {
     text-decoration: none;
 }
+
+h2,h3,h4  {
+    padding-bottom: 10px;
+    color: white;
+}
   
 /* Itinerary Page Styles */
 .park-image {
@@ -163,6 +168,7 @@ a:hover {
 
 .button-container {
     display: flex;
+    padding-top: 15px;
 }
 
 .lodging-title {
@@ -186,6 +192,7 @@ a:hover {
     padding: 70px;
 }
 
+
 .registerRow form {
     color: white;
 }
@@ -195,11 +202,6 @@ a:hover {
     background-position: bottom;
 }
 
-/* It's a secret. */
-
-.hideThings {
-    display: none;
-}
 
 .primary-button {
     background-color: white;
@@ -221,11 +223,6 @@ button.primary-button:hover {
     border: 0px;
 }
 
-h2,h3  {
-    padding-bottom: 10px;
-    color: white;
-}
-
 .park-image {
     width: 500px;
 }
@@ -238,7 +235,12 @@ h2,h3  {
         margin-left: auto;
         margin-right: auto;
     }
+  
+.hotel-image {
+    display: block;
+    width: 500px;
 }
+
 
 .activity-image {
     width: 400px;
@@ -249,3 +251,36 @@ h2,h3  {
     padding-bottom:30px;
     
 }
+
+.remove-activity {
+    background-color: white;
+    color: rgb(42, 42, 92);
+    padding: 5px 8px;
+    margin-right: 10px;   
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+button.remove-activity:hover {
+    color: rgb(133, 133, 187);
+}
+
+
+/* It's a secret. */
+
+.hideThings {
+    display: none;
+}
+
+
+@media screen and (max-width: 840px) {
+    .carousel {
+         display: none;
+     }
+     .login-box {
+        margin-left: auto;
+        margin-right: auto;
+        padding-bottom: 20px;
+    }
+ }
