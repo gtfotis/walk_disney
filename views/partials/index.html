@@ -2,113 +2,48 @@
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <link href="/styles/styles.css" rel="stylesheet">
 
-<div class="bodyAlignment">
+<div class="welcome">
+    <video autoplay muted loop id="myVideo">
+        <source src="/videos/walkdisney.mp4" type="video/mp4">
+    </video>
 
-    <!-- THE CAROUSEL -->
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img id="firstPic" class="d-block w-100" src="/images/castle.jpeg" alt="First slide">
-                <!-- <div class="carousel-caption d-none d-md-block">
-                <h5>My Caption Title (1st Image)</h5>
-                <p>The whole caption will only show up if the screen is at least medium size.</p>
-            </div> -->
-            </div>
-            <div class="carousel-item">
-                <img class="d-block w-100" src="/images/epcot.jpeg" alt="Second slide">
-            </div>
-            <div class="carousel-item">
-                <img class="d-block w-100" src="/images/animalkingdom.jpeg" alt="Third slide">
-            </div>
-        </div>
+    <div class="welcomeText">
+        <h2>Welcome to WalkDisney!</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, magnam.</p>
+
+        ${!!is_logged_in ?
+        `<a href="/park_selector"><button type="button" href="#">Plan your Trip!</button></a>`
+        :
+        `
+        <a href="/users/register"><button>Create an Account!</button></a>
+        `
+        }
     </div>
-
-    <!-- SIGN-IN FORM -->
-    <div class="login-box">
-        <form action="/users/login" method="POST" class="login-text" id="logForm">
-            <p>Sign-in</p>
-            <div class="form-group">
-                <label for="exampleInputEmail1">Email address</label>
-                <input name="user_email" type="email" class="form-control" id="exampleInputEmail1"
-                    aria-describedby="emailHelp" placeholder="Enter email">
-            </div>
-            <div class="form-group">
-                <label for="exampleInputPassword1">Password</label>
-                <input name="user_password" type="password" class="form-control" id="exampleInputPassword1"
-                    placeholder="Password">
-            </div>
-            <center>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </center>
-            <small class="form-text text-muted">Not a member? <a href="#" id="registration">Sign up
-                    here!</a></small>
-        </form>
-
-        <!-- REGISTRATION FORM -->
-
-        <form action="/users/register" method="POST" class="hideThings" id="regForm">
-            <h2>Register</h2>
-            <label>First Name
-                <input name="first_name" class="form-control" type="text">
-            </label>
-            <label>Last Name
-                <input name="last_name" class="form-control" type="text">
-            </label>
-            <label>Email
-                <input name="user_email" class="form-control" type="email">
-            </label>
-            <br>
-            <label>Password
-                <input name="user_password" class="form-control" type="password">
-            </label>
-            <br>
-            <button type="submit" class="btn btn-primary">Register</button>
-
-            <small class="form-text text-muted">Already a member? <a href="#" id="loginNow">Login here!</a></small>
-        </form>
-    
-    </div>
-
 </div>
 
 <!-- EXTRA TEXT BOXES -->
-<div class="bottomBoxes">
+<div class="welcomeBoxes">
     <div>
-        <h2>Plan</h2>
+        <img src="/images/disneymouse.jpeg">
+        <h2>Parks</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea delectus facilis voluptates placeat
             quisquam architecto.
         </p>
     </div>
 
     <div>
-        <h2>Travel</h2>
+        <img src="/images/pops.jpeg">
+        <h2>Dining</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis veniam fugiat voluptas magni,
             qui
             beatae.</p>
     </div>
 
     <div>
-        <h2>Explore</h2>
+        <img src="/images/lodge.jpeg">
+        <h2>Lodging</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero corrupti voluptate, suscipit
             repellat
             sint aut.</p>
     </div>
 </div>
-
-<!-- Carousel Scripts -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script>
-
-<script src="hidden.js"></script>
