@@ -1,10 +1,10 @@
 <div class="registerRow">
 
-    <div class="registerColumn">Work In Progress</div>
+    <div class="registerColumn" id="firstRegisterColumn"></div>
 
     <div class="registerColumn">
 
-        <form action="/users/register" method="POST">
+        <form action="/users/register" method="POST" class="randomClass" id="regForm">
             <h2>Register</h2>
             <label>First Name
                 <input name="first_name" class="form-control" type="text">
@@ -21,6 +21,44 @@
             </label>
             <br>
             <button type="submit" class="btn btn-primary">Register</button>
+
+            <small class="form-text text-muted">Already a member? <a href="#" id="loginNow">Login here!</a></small>
+        </form>
+
+        <form action="/users/login" method="POST" class="hideThings" id="logForm">
+            <p>Sign-in</p>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input name="user_email" type="email" class="form-control" id="exampleInputEmail1"
+                    aria-describedby="emailHelp" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input name="user_password" type="password" class="form-control" id="exampleInputPassword1"
+                    placeholder="Password">
+            </div>
+            <center>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </center>
+            <small class="form-text text-muted">Not a member? <a href="#" id="registration">Sign up
+                    here!</a></small>
         </form>
     </div>
 </div>
+
+<script>
+    const loginForm = document.querySelector("#logForm")
+    const regForm = document.querySelector("#regForm")
+
+    const registerLink = document.querySelector('#registration')
+    registerLink.addEventListener('click', function () {
+        loginForm.className = "hideThings"
+        regForm.className = "randomClass"
+    })
+
+    const loginLink = document.querySelector('#loginNow')
+    loginLink.addEventListener('click', function () {
+        regForm.className = "hideThings"
+        loginForm.className = "randomClass"
+    })
+</script>

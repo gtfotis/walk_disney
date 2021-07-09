@@ -179,15 +179,29 @@ h2,h3,h4  {
 
 .registerRow {
     display: flex;
+    flex-wrap: wrap-reverse;
     margin: 80px;
+    border-radius: 10px;
+    overflow: hidden;
 }
   
 .registerColumn {
-    background-color: white;
+    background-color: rgba(0, 0, 0, 0.425);
     height: 500px;
     flex: 50%;
     padding: 70px;
 }
+
+
+.registerRow form {
+    color: white;
+}
+
+#firstRegisterColumn {
+    background-image: url(/images/register.jpeg);
+    background-position: bottom;
+}
+
 
 .primary-button {
     background-color: white;
@@ -213,6 +227,15 @@ button.primary-button:hover {
     width: 500px;
 }
 
+@media screen and (max-width: 840px) {
+    .carousel {
+         display: none;
+     }
+     .login-box {
+        margin-left: auto;
+        margin-right: auto;
+    }
+  
 .hotel-image {
     display: block;
     width: 500px;
