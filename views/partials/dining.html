@@ -4,8 +4,7 @@
         <p>When you're done selecting restuarants, click the button below to continue on to lodging.</p>
         <div class="button-container">
             <form action="/dining/move_to_lodging" method="POST">
-                <!-- Broken right now, need to get the park id!-->
-                <!-- <input type="hidden" name="park_id" value="id"> -->
+                <input type="hidden" name="park_id" value="${park_id}">
                 <button type="submit" class="remove-activity">Go to Lodging</button>
             </form>
             <a href="/itinerary" class="remove-activity">View Itinerary</a>
@@ -19,12 +18,12 @@
                     <p>${restaurant.price_range}</p>
                     <p>${restaurant.cuisine}</p>
                     <div class="button-container">
-                        <a href="${restaurant.menu}" target="_blank" class="primary-button">VIEW MENU</a>
+                        <a href="${restaurant.menu}" target="_blank" class="remove-activity">View Menu</a>
     
                         <form action="/dining/add" method="POST">
                             <input type="hidden" name="dining_id" value="${restaurant.id}">
                             <input type="hidden" name="park_id" value="${restaurant.park_id}">
-                            <button type="submit" class="primary-button">SELECT</button>
+                            <button type="submit" class="remove-activity">Add to Itinerary</button>
                         </form>
                     </div>
                 </div> `

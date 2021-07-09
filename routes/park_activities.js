@@ -26,7 +26,6 @@ router.post('/add_activity', async (req, res) => {
     const user_id = req.session.user_id;
     const response = await ActivitiesModel.addActivity( user_id, activity_id, park_id);
     console.log('ADD ACTIVITY RESPONSE IS: ', response);
-    // res.redirect(`/dining/${park_id}`); //use this with a hidden input form to move on it a different route.
     res.redirect('back');
 
 });
