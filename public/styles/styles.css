@@ -277,6 +277,18 @@ button.remove-activity:hover {
 }
 
 
+/* Modal Styles */
+.modal-body h3 {
+    color: white;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.modal-body {
+    height: 200px;
+    background-color: rgb(42, 42, 92);
+}
+
 /* It's a secret. */
 
 .hideThings {
@@ -294,3 +306,4 @@ button.remove-activity:hover {
         padding-bottom: 20px;
     }
  }
+

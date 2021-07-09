@@ -34,9 +34,19 @@
             <form action="/park_activities/add_activity" method="POST">
                 <input type="hidden" name="activity_id" value="${todo.id}">
                 <input type="hidden" name="park_id" value="${todo.park_id}">
-                <button type="submit" class="primary-button">Add to Itinerary</button>
-
-
+                <button type="submit" class="remove-activity">
+                   Add Activity
+                  </button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="submitModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                   <h3>Activity Added</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
              </form>
         </div>
         
@@ -51,3 +61,5 @@
     
 
 </div>
+
+<script></script>

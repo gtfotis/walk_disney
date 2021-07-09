@@ -20,13 +20,14 @@ router.get('/', async (req, res) => {
 });
 
 router.post('/add_activity', async (req, res) => {
-    // const { plan_id } = req.session; 
-    console.log('REQ SESSION IS: ', req.session);
     const { activity_id, park_id } = req.body;
     const user_id = req.session.user_id;
     const response = await ActivitiesModel.addActivity( user_id, activity_id, park_id);
-    console.log('ADD ACTIVITY RESPONSE IS: ', response);
-    res.redirect('back');
+    
+    const referral = req.header('Referrer');
+    const rootUrl = referral.split('?');
+    const redirectUrl = rootUrl[0] + '?success=true'
+    res.redirect(redirectUrl);
 
 });
 
