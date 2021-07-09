@@ -1,3 +1,7 @@
+html {
+    cursor: url('/images/glove3.png'), auto;
+  }
+
 body { 
     background-color: rgb(42, 42, 92); 
 }
@@ -12,6 +16,7 @@ a {
 
 a:hover {
     text-decoration: none;
+    cursor: url('/images/glove3.png'), auto;
 }
 
 h2,h3,h4  {
@@ -53,6 +58,7 @@ h2,h3,h4  {
 .bodyAlignment {
     display: flex;
     flex-direction: row;
+    margin-bottom: 100px;
 }
 
 /* LOGIN ITEMS */
@@ -94,7 +100,8 @@ h2,h3,h4  {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding-bottom: 20px;
+    padding-bottom: 15px;
+    background-color: rgb(42, 42, 92);
 }
 
 .containerLeft {
@@ -144,7 +151,7 @@ h2,h3,h4  {
 /* BIKINI BOTTOM ITEMS */
 
 .bottomBoxes {
-    padding: 100px;
+    padding: 50px;
     display: flex;
     flex-direction: row;
     color: white;
@@ -285,3 +292,44 @@ button.remove-activity:hover {
         padding-bottom: 20px;
     }
  }
+
+/* WELCOME ITEMS */
+.welcome {
+    height: 450px;
+    display: flex;
+}
+
+.welcomeText {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+    align-self: flex-end;
+}
+
+.welcomeBoxes {
+    display: flex;
+    flex-direction: row;
+    padding-top: 20px;
+}
+
+.welcomeBoxes div {
+    margin: 20px;
+}
+
+.welcomeBoxes img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+#myVideo {
+object-fit: cover;
+width: 100vw;
+height: 56.2vh;
+top: 0;
+left: 0;
+z-index: -100;
+}
