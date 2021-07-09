@@ -39,8 +39,19 @@
                         ${itinerary_data.map (restaurant =>
                             `${restaurant.park_id === 1 ? 
                                 `
-                                <h4>${restaurant.restaurant_name}</h4>
-                                <a href="${restaurant.menu}">View Menu</a>
+                                ${restaurant.food_id !== null ? 
+                                    ` <h4>${restaurant.restaurant_name}</h4>
+                                    <div class="button-container">
+                                        <a href="${restaurant.menu}" class="remove-activity">View Menu</a>
+                                        <form action="/itinerary/delete_food" method="POST">
+                                            <input type="hidden" name="food_id" value="${restaurant.food_id}">
+                                            <button class="remove-activity">Remove Restaurant</button>
+                                        </form>
+                                    </div>
+                                    `
+                                    :
+                                    ``
+                                }
                                 
                                 `
                                 :
@@ -89,9 +100,19 @@
                         <h3>Dining</h3>
                         ${itinerary_data.map (restaurant =>
                             `${restaurant.park_id === 2 ? 
-                                `
-                                <h4>${restaurant.restaurant_name}</h4>
-                                <a href="${restaurant.menu}">MENU</a>
+                                `${restaurant.food_id !== null ? 
+                                    ` <h4>${restaurant.restaurant_name}</h4>
+                                    <div class="button-container">
+                                        <a href="${restaurant.menu}" class="remove-activity">View Menu</a>
+                                        <form action="/itinerary/delete_food" method="POST">
+                                            <input type="hidden" name="food_id" value="${restaurant.food_id}">
+                                            <button class="remove-activity">Remove Restaurant</button>
+                                        </form>
+                                    </div>
+                                    `
+                                    :
+                                    ``
+                                }
                                 
                                 `
                                 :
@@ -140,8 +161,19 @@
                         ${itinerary_data.map (restaurant =>
                             `${restaurant.park_id === 3 ? 
                                 `
-                                <h4>${restaurant.restaurant_name}</h4>
-                                <a href="${restaurant.menu}">MENU</a>
+                                ${restaurant.food_id !== null ? 
+                                    ` <h4>${restaurant.restaurant_name}</h4>
+                                    <div class="button-container">
+                                        <a href="${restaurant.menu}" class="remove-activity">View Menu</a>
+                                        <form action="/itinerary/delete_food" method="POST">
+                                            <input type="hidden" name="food_id" value="${restaurant.food_id}">
+                                            <button class="remove-activity">Remove Restaurant</button>
+                                        </form>
+                                    </div>
+                                    `
+                                    :
+                                    ``
+                                }
                                 
                                 `
                                 :
@@ -189,8 +221,19 @@
                         ${itinerary_data.map (restaurant =>
                             `${restaurant.park_id === 4 ? 
                                 `
-                                <h4>${restaurant.restaurant_name}</h4>
-                                <a href="${restaurant.menu}">MENU</a>
+                                ${restaurant.food_id !== null ? 
+                                    ` <h4>${restaurant.restaurant_name}</h4>
+                                    <div class="button-container">
+                                        <a href="${restaurant.menu}" class="remove-activity">View Menu</a>
+                                        <form action="/itinerary/delete_food" method="POST">
+                                            <input type="hidden" name="food_id" value="${restaurant.food_id}">
+                                            <button class="remove-activity">Remove Restaurant</button>
+                                        </form>
+                                    </div>
+                                    `
+                                    :
+                                    ``
+                                }
                                 
                                 `
                                 :
@@ -201,7 +244,34 @@
                             ).join('')}
                     </div>
                 </div>
+
+                <!-- LODGING -->
                     
+                <div class="row align-items-start">
+                        ${lodging_data.map (hotel => 
+                            `${hotel.lodging_id !== null ?
+                                `
+                                <div class="col">
+                                    <h2>Your Lodging</h2>
+                                    <h3>${hotel.lodging_name}</h3>
+                                    <img src="${hotel.lodging_image}" class="hotel-image">
+                                    <div class="button-container">
+                                        <a href="${hotel.lodging_url}" target="_blank" class="remove-activity">Visit Website</a>
+                                        <form action="/itinerary/delete_lodging" method="POST">
+                                            <input type="hidden" name="lodging_id" value=${hotel.lodging_id}>
+                                            <button type="submit" class="remove-activity">Delete Lodging</button>
+                                        </form>
+                                    </div>
+                                </div>
+                                `
+                                :
+                                ``
+                                                    
+                            }`
+                            
+                            )}
+
+                </div>
                 
                 `
                 :

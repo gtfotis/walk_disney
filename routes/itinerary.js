@@ -36,11 +36,18 @@ router.post('/delete_activity', async (req, res) => {
 
 router.post('/delete_lodging', async (req, res) => {
     const { lodging_id } = req.body;
-    const response = await ItineraryModel.removeLodging(lodging_id);
+    const user_id = req.session.user_id;
+    const response = await ItineraryModel.removeLodging(lodging_id, user_id);
     console.log('DELETE LODGING RESPONSE: ', response);
     res.redirect('back');
-})
+});
 
+router.post('/delete_food', async (req, res) => {
+    const { food_id } = req.body;
+    const user_id = req.session.user_id;
+    const response = await ItineraryModel.removeFood(food_id, user_id)
+    res.redirect('back');
+});
 
 
 module.exports = router;
