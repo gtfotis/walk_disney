@@ -25,12 +25,14 @@ router.get('/:id', async (req, res) => {
 
 
 router.post('/add', async (req, res) => {
-    // const { plan_id } = req.session;
     const { dining_id, park_id } = req.body;
     const user_id = req.session.user_id;
     const response = await DiningModel.addDining(user_id, dining_id, park_id);
-    console.log('DINING RESPONSE IS: ', response);
-    res.redirect('back');
+
+    const referral = req.header('Referrer');
+    const rootUrl = referral.split('?');
+    const redirectUrl = rootUrl[0] + '?success=true'
+    res.redirect(redirectUrl);
 
 });
 
