@@ -1,7 +1,5 @@
-
 const loginForm = document.querySelector("#logForm")
 const regForm = document.querySelector("#regForm")
-// const registerForm = document.querySelector('#registerForm')
 
 const registerLink = document.querySelector('#registration')
 registerLink.addEventListener('click', function () {
@@ -9,3 +7,8 @@ registerLink.addEventListener('click', function () {
     regForm.className = "randomClass"
 })
 
+const loginLink = document.querySelector('#loginNow')
+loginLink.addEventListener('click', function () {
+    regForm.className = "hideThings"
+    loginForm.className = "randomClass"
+})
