@@ -1,8 +1,8 @@
-body { 
-    background-color: rgb(42, 42, 92); 
+body {
+    background-color: rgb(42, 42, 92);
 }
 
-p { 
+p {
     color: white;
 }
 
@@ -14,12 +14,16 @@ a:hover {
     text-decoration: none;
 }
 
-h2,h3,h4  {
+h2,
+h3,
+h4 {
     padding-bottom: 10px;
     color: white;
 }
-  
+
+
 /* Itinerary Page Styles */
+
 .park-image {
     width: 300px;
 }
@@ -34,6 +38,7 @@ h2,h3,h4  {
     margin-top: 10px;
 }
 
+
 /* CAROUSEL ITEMS */
 
 .carousel-item img {
@@ -42,18 +47,18 @@ h2,h3,h4  {
 
 .carousel {
     padding-left: 50px;
-    width:70%;
-  }
-
-.carousel img {
-    border-radius: 10px; 
+    width: 70%;
 }
 
+.carousel img {
+    border-radius: 10px;
+}
 
 .bodyAlignment {
     display: flex;
     flex-direction: row;
 }
+
 
 /* LOGIN ITEMS */
 
@@ -72,7 +77,8 @@ h2,h3,h4  {
 .login-box p {
     font-size: 20px;
 }
-.login-text > *{
+
+.login-text>* {
     margin-top: 20px;
     margin-left: 40px;
     margin-right: 40px;
@@ -86,6 +92,7 @@ h2,h3,h4  {
     text-align: center;
     color: rgb(42, 42, 92);
 }
+
 
 /* NAVIGATION BAR ITEMS */
 
@@ -141,6 +148,7 @@ h2,h3,h4  {
     color: white;
 }
 
+
 /* BIKINI BOTTOM ITEMS */
 
 .bottomBoxes {
@@ -161,7 +169,7 @@ h2,h3,h4  {
     margin-top: 15px;
 }
 
-.delete-btn  {
+.delete-btn {
     display: inline-block;
     margin: 10px 5px;
 }
@@ -174,19 +182,21 @@ h2,h3,h4  {
     margin-top: 30px;
 }
 
+
 /* REGISTER ITEMS */
 
 .registerRow {
     display: flex;
     margin: 80px;
 }
-  
+
 .registerColumn {
     background-color: white;
     height: 500px;
     flex: 50%;
     padding: 70px;
 }
+
 
 /* It's a secret. */
 
@@ -196,7 +206,7 @@ h2,h3,h4  {
 
 .primary-button {
     background-color: white;
-    color:  rgb(42, 42, 92);
+    color: rgb(42, 42, 92);
     margin-top: 5px;
     padding: 10px 15px;
     border-radius: 20px;
@@ -220,14 +230,12 @@ button.primary-button:hover {
 
 @media screen and (max-width: 840px) {
     .carousel {
-         display: none;
-     }
-     .login-box {
+        display: none;
+    }
+    .login-box {
         margin-left: auto;
         margin-right: auto;
     }
- }
-    padding-bottom: 20px;
 }
 
 .activity-image {
@@ -236,14 +244,13 @@ button.primary-button:hover {
 
 .main-title {
     color: white;
-    padding-bottom:30px;
-    
+    padding-bottom: 30px;
 }
 
 .remove-activity {
     background-color: white;
     color: rgb(42, 42, 92);
-    padding: 5px 8px;   
+    padding: 5px 8px;
     border: none;
     border-radius: 10px;
     margin-bottom: 10px;
@@ -251,4 +258,21 @@ button.primary-button:hover {
 
 button.remove-activity:hover {
     color: rgb(133, 133, 187);
+}
+
+.modal-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    color: transparent;
+    border-color: transparent;
+}
+
+.modalmap {
+    border-radius: 4px;
+    width: auto;
+    height: auto;
+    max-width: 1200px;
+    max-height: 100%;
 }
