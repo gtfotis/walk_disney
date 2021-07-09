@@ -43,11 +43,11 @@ class Itinerary {
     }
     
 
-    static async removeActivity(activity_id) {
+    static async removeActivity(activity_id, user_id) {
         try {
-            // Sets to null so the lodging is unaffected
+            // Sets to null rather than deleting so the lodging and other stuff is not affectted
             const query = (`
-            UPDATE plan SET parks_id = null, activity_id = null, food_id = null WHERE activity_id = ${activity_id};
+            UPDATE plan SET activity_id = null WHERE activity_id = ${activity_id} AND user_id = ${user_id};
             `);
             console.log(query);
             const response = await db.any(query);

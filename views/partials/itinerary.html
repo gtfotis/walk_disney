@@ -14,9 +14,17 @@
                         ${itinerary_data.map (activity =>
                             `${activity.park_id === 1 ? 
                                 `
-                                <h4>${activity.activity_name}</h4>
-                                <p>Time: ${activity.activity_time}</p>
-                                <button>Remove Activity</button>
+                                ${activity.activity_id !== null ?
+                                    `<h4>${activity.activity_name}</h4>
+                                    <p>Time: ${activity.activity_time}</p>
+                                    <form action="/itinerary/delete_activity" method="POST">
+                                        <input type="hidden" name="activity_id" value="${activity.activity_id}">
+                                        <button class="remove-activity">Remove Activity</button>
+                                    </form>`
+                                    :
+                                    ``
+                                
+                                }
                                 
                                 `
                                 :
@@ -32,7 +40,7 @@
                             `${restaurant.park_id === 1 ? 
                                 `
                                 <h4>${restaurant.restaurant_name}</h4>
-                                <a href="${restaurant.menu}">MENU</a>
+                                <a href="${restaurant.menu}">View Menu</a>
                                 
                                 `
                                 :
@@ -56,9 +64,17 @@
                         ${itinerary_data.map (activity =>
                             `${activity.park_id === 2 ? 
                                 `
-                                <h4>${activity.activity_name}</h4>
-                                <p>Time: ${activity.activity_time}</p>
+                                ${activity.activity_id !== null ?
+                                    `<h4>${activity.activity_name}</h4>
+                                    <p>Time: ${activity.activity_time}</p>
+                                    <form action="/itinerary/delete_activity" method="POST">
+                                        <input type="hidden" name="activity_id" value="${activity.activity_id}">
+                                        <button class="remove-activity">Remove Activity</button>
+                                    </form>`
+                                    :
+                                    ``
                                 
+                                }
                                 `
                                 :
                                 ``
@@ -68,6 +84,24 @@
                             ).join('')}
 
                     </div>
+
+                    <div class="col">
+                        <h3>Dining</h3>
+                        ${itinerary_data.map (restaurant =>
+                            `${restaurant.park_id === 2 ? 
+                                `
+                                <h4>${restaurant.restaurant_name}</h4>
+                                <a href="${restaurant.menu}">MENU</a>
+                                
+                                `
+                                :
+                                ``
+                            
+                            }`
+                            
+                            ).join('')}
+                    </div>
+
                 </div>
 
                 <!-- Epcot -->
@@ -81,9 +115,17 @@
                         ${itinerary_data.map (activity =>
                             `${activity.park_id === 3 ? 
                                 `
-                                <h4>${activity.activity_name}</h4>
-                                <p>Time: ${activity.activity_time}</p>
+                                ${activity.activity_id !== null ?
+                                    `<h4>${activity.activity_name}</h4>
+                                    <p>Time: ${activity.activity_time}</p>
+                                    <form action="/itinerary/delete_activity" method="POST">
+                                        <input type="hidden" name="activity_id" value="${activity.activity_id}">
+                                        <button class="remove-activity">Remove Activity</button>
+                                    </form>`
+                                    :
+                                    ``
                                 
+                                }                                
                                 `
                                 :
                                 ``
@@ -92,6 +134,22 @@
                             
                             ).join('')}
 
+                    </div>
+                    <div class="col">
+                        <h3>Dining</h3>
+                        ${itinerary_data.map (restaurant =>
+                            `${restaurant.park_id === 3 ? 
+                                `
+                                <h4>${restaurant.restaurant_name}</h4>
+                                <a href="${restaurant.menu}">MENU</a>
+                                
+                                `
+                                :
+                                ``
+                            
+                            }`
+                            
+                            ).join('')}
                     </div>
                 </div>
 
@@ -106,9 +164,17 @@
                         ${itinerary_data.map (activity =>
                             `${activity.park_id === 4 ? 
                                 `
-                                <h4>${activity.activity_name}</h4>
-                                <p>Time: ${activity.activity_time}</p>
+                                ${activity.activity_id !== null ?
+                                    `<h4>${activity.activity_name}</h4>
+                                    <p>Time: ${activity.activity_time}</p>
+                                    <form action="/itinerary/delete_activity" method="POST">
+                                        <input type="hidden" name="activity_id" value="${activity.activity_id}">
+                                        <button class="remove-activity">Remove Activity</button>
+                                    </form>`
+                                    :
+                                    ``
                                 
+                                }
                                 `
                                 :
                                 ``
@@ -117,6 +183,22 @@
                             
                             ).join('')}
 
+                    </div>
+                    <div class="col">
+                        <h3>Dining</h3>
+                        ${itinerary_data.map (restaurant =>
+                            `${restaurant.park_id === 4 ? 
+                                `
+                                <h4>${restaurant.restaurant_name}</h4>
+                                <a href="${restaurant.menu}">MENU</a>
+                                
+                                `
+                                :
+                                ``
+                            
+                            }`
+                            
+                            ).join('')}
                     </div>
                 </div>
                     
