@@ -24,10 +24,11 @@ router.get('/', async (req, res) => {
 });
 
 
-router.post('/update', async (req, res) => {
+router.post('/delete_activity', async (req, res) => {
     const { activity_id } = req.body;
+    const user_id = req.session.user_id;
     console.log(req.body);
-    const response = await ItineraryModel.removeActivity(activity_id);
+    const response = await ItineraryModel.removeActivity(activity_id, user_id);
     console.log('UPDATE RESPONSE, ', response);
     res.redirect('back');
 

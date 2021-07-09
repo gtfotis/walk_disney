@@ -13,6 +13,11 @@ a {
 a:hover {
     text-decoration: none;
 }
+
+h2,h3,h4  {
+    padding-bottom: 10px;
+    color: white;
+}
   
 /* Itinerary Page Styles */
 .park-image {
@@ -209,11 +214,6 @@ button.primary-button:hover {
     border: 0px;
 }
 
-h2,h3  {
-    padding-bottom: 10px;
-    color: white;
-}
-
 .park-image {
     width: 500px;
 }
@@ -238,4 +238,17 @@ h2,h3  {
     color: white;
     padding-bottom:30px;
     
+}
+
+.remove-activity {
+    background-color: white;
+    color: rgb(42, 42, 92);
+    padding: 5px 8px;   
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+button.remove-activity:hover {
+    color: rgb(133, 133, 187);
 }
