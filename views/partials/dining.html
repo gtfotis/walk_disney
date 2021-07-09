@@ -1,6 +1,15 @@
 <div class="container">
     ${!!is_logged_in ? 
         `<h1 class="main-title">Choose Your Dining</h1>
+        <p>When you're done selecting restuarants, click the button below to continue on to lodging.</p>
+        <div class="button-container">
+            <form action="/dining/move_to_lodging" method="POST">
+                <!-- Broken right now, need to get the park id!-->
+                <!-- <input type="hidden" name="park_id" value="id"> -->
+                <button type="submit" class="remove-activity">Go to Lodging</button>
+            </form>
+            <a href="/itinerary" class="remove-activity">View Itinerary</a>
+        </div>
 
         <div class="row align-items-start">
     
