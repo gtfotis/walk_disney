@@ -39,8 +39,19 @@
                         ${itinerary_data.map (restaurant =>
                             `${restaurant.park_id === 1 ? 
                                 `
-                                <h4>${restaurant.restaurant_name}</h4>
-                                <a href="${restaurant.menu}">View Menu</a>
+                                ${restaurant.food_id !== null ? 
+                                    ` <h4>${restaurant.restaurant_name}</h4>
+                                    <div class="button-container">
+                                        <a href="${restaurant.menu}" class="remove-activity">View Menu</a>
+                                        <form action="/itinerary/delete_food" method="POST">
+                                            <input type="hidden" name="food_id" value="${restaurant.food_id}">
+                                            <button class="remove-activity">Remove Restaurant</button>
+                                        </form>
+                                    </div>
+                                    `
+                                    :
+                                    ``
+                                }
                                 
                                 `
                                 :
@@ -50,6 +61,7 @@
                             
                             ).join('')}
                     </div>
+
                 </div>
 
                 <!-- ANIMAL KINGDOM -->
@@ -82,36 +94,25 @@
                             
                             ).join('')}
 
-                  </div>
-                  
-            <div class="col">
-                <h3>Activities</h3>
-                <h4>${plan.activity_name}</h4>
-                <p>Time: ${plan.activity_time}</p>
-                <p>${plan.activity_description}</p>
+                    </div>
 
-            </div>
-            <div class="col">
-                <h3>Dining</h3>
-                <p>${plan.restaurant_name}</p>
-                <a href="${plan.menu}" target="_blank" class="btn btn-primary">VIEW MENU</a>
-            </div>
-            <form action="itinerary/update" method="POST">
-                <input type="hidden" name="activity_id" value="${plan.activity_id}">
-                <button type="submit" class="btn btn-primary">DELETE DAY</button>
-            </form>
-        </div>
-        ` ).join('')} ` : `
-        <h2>Start Planning Your Trip by Going to the Park Selector Page!</h2>
-        <button>SELECT A PARK</button>` }
-  
                     <div class="col">
                         <h3>Dining</h3>
                         ${itinerary_data.map (restaurant =>
                             `${restaurant.park_id === 2 ? 
-                                `
-                                <h4>${restaurant.restaurant_name}</h4>
-                                <a href="${restaurant.menu}">MENU</a>
+                                `${restaurant.food_id !== null ? 
+                                    ` <h4>${restaurant.restaurant_name}</h4>
+                                    <div class="button-container">
+                                        <a href="${restaurant.menu}" class="remove-activity">View Menu</a>
+                                        <form action="/itinerary/delete_food" method="POST">
+                                            <input type="hidden" name="food_id" value="${restaurant.food_id}">
+                                            <button class="remove-activity">Remove Restaurant</button>
+                                        </form>
+                                    </div>
+                                    `
+                                    :
+                                    ``
+                                }
                                 
                                 `
                                 :
@@ -121,6 +122,7 @@
                             
                             ).join('')}
                     </div>
+
                 </div>
 
                 <!-- Epcot -->
@@ -159,8 +161,19 @@
                         ${itinerary_data.map (restaurant =>
                             `${restaurant.park_id === 3 ? 
                                 `
-                                <h4>${restaurant.restaurant_name}</h4>
-                                <a href="${restaurant.menu}">MENU</a>
+                                ${restaurant.food_id !== null ? 
+                                    ` <h4>${restaurant.restaurant_name}</h4>
+                                    <div class="button-container">
+                                        <a href="${restaurant.menu}" class="remove-activity">View Menu</a>
+                                        <form action="/itinerary/delete_food" method="POST">
+                                            <input type="hidden" name="food_id" value="${restaurant.food_id}">
+                                            <button class="remove-activity">Remove Restaurant</button>
+                                        </form>
+                                    </div>
+                                    `
+                                    :
+                                    ``
+                                }
                                 
                                 `
                                 :
@@ -208,8 +221,19 @@
                         ${itinerary_data.map (restaurant =>
                             `${restaurant.park_id === 4 ? 
                                 `
-                                <h4>${restaurant.restaurant_name}</h4>
-                                <a href="${restaurant.menu}">MENU</a>
+                                ${restaurant.food_id !== null ? 
+                                    ` <h4>${restaurant.restaurant_name}</h4>
+                                    <div class="button-container">
+                                        <a href="${restaurant.menu}" class="remove-activity">View Menu</a>
+                                        <form action="/itinerary/delete_food" method="POST">
+                                            <input type="hidden" name="food_id" value="${restaurant.food_id}">
+                                            <button class="remove-activity">Remove Restaurant</button>
+                                        </form>
+                                    </div>
+                                    `
+                                    :
+                                    ``
+                                }
                                 
                                 `
                                 :
@@ -220,7 +244,34 @@
                             ).join('')}
                     </div>
                 </div>
+
+                <!-- LODGING -->
                     
+                <div class="row align-items-start">
+                        ${lodging_data.map (hotel => 
+                            `${hotel.lodging_id !== null ?
+                                `
+                                <div class="col">
+                                    <h2>Your Lodging</h2>
+                                    <h3>${hotel.lodging_name}</h3>
+                                    <img src="${hotel.lodging_image}" class="hotel-image">
+                                    <div class="button-container">
+                                        <a href="${hotel.lodging_url}" target="_blank" class="remove-activity">Visit Website</a>
+                                        <form action="/itinerary/delete_lodging" method="POST">
+                                            <input type="hidden" name="lodging_id" value=${hotel.lodging_id}>
+                                            <button type="submit" class="remove-activity">Delete Lodging</button>
+                                        </form>
+                                    </div>
+                                </div>
+                                `
+                                :
+                                ``
+                                                    
+                            }`
+                            
+                            )}
+
+                </div>
                 
                 `
                 :
@@ -239,4 +290,5 @@
         `<h2>Sign Up or Login to Create Your Itinerary</h2>
         <a href="users/register" class="primary-button">REGISTER</a>`
     }
+
 </div>

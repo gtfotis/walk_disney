@@ -168,6 +168,7 @@ h2,h3,h4  {
 
 .button-container {
     display: flex;
+    padding-top: 15px;
 }
 
 .lodging-title {
@@ -186,12 +187,6 @@ h2,h3,h4  {
     height: 500px;
     flex: 50%;
     padding: 70px;
-}
-
-/* It's a secret. */
-
-.hideThings {
-    display: none;
 }
 
 .primary-button {
@@ -218,17 +213,11 @@ button.primary-button:hover {
     width: 500px;
 }
 
-@media screen and (max-width: 840px) {
-    .carousel {
-         display: none;
-     }
-     .login-box {
-        margin-left: auto;
-        margin-right: auto;
-    }
- }
-    padding-bottom: 20px;
+.hotel-image {
+    display: block;
+    width: 500px;
 }
+
 
 .activity-image {
     width: 400px;
@@ -243,7 +232,8 @@ button.primary-button:hover {
 .remove-activity {
     background-color: white;
     color: rgb(42, 42, 92);
-    padding: 5px 8px;   
+    padding: 5px 8px;
+    margin-right: 10px;   
     border: none;
     border-radius: 10px;
     margin-bottom: 10px;
@@ -252,3 +242,22 @@ button.primary-button:hover {
 button.remove-activity:hover {
     color: rgb(133, 133, 187);
 }
+
+
+/* It's a secret. */
+
+.hideThings {
+    display: none;
+}
+
+
+@media screen and (max-width: 840px) {
+    .carousel {
+         display: none;
+     }
+     .login-box {
+        margin-left: auto;
+        margin-right: auto;
+        padding-bottom: 20px;
+    }
+ }
