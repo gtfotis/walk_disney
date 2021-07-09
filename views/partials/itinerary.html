@@ -50,6 +50,7 @@
                             
                             ).join('')}
                     </div>
+
                 </div>
 
                 <!-- ANIMAL KINGDOM -->
@@ -82,29 +83,8 @@
                             
                             ).join('')}
 
-                  </div>
-                  
-            <div class="col">
-                <h3>Activities</h3>
-                <h4>${plan.activity_name}</h4>
-                <p>Time: ${plan.activity_time}</p>
-                <p>${plan.activity_description}</p>
+                    </div>
 
-            </div>
-            <div class="col">
-                <h3>Dining</h3>
-                <p>${plan.restaurant_name}</p>
-                <a href="${plan.menu}" target="_blank" class="btn btn-primary">VIEW MENU</a>
-            </div>
-            <form action="itinerary/update" method="POST">
-                <input type="hidden" name="activity_id" value="${plan.activity_id}">
-                <button type="submit" class="btn btn-primary">DELETE DAY</button>
-            </form>
-        </div>
-        ` ).join('')} ` : `
-        <h2>Start Planning Your Trip by Going to the Park Selector Page!</h2>
-        <button>SELECT A PARK</button>` }
-  
                     <div class="col">
                         <h3>Dining</h3>
                         ${itinerary_data.map (restaurant =>
@@ -121,6 +101,7 @@
                             
                             ).join('')}
                     </div>
+
                 </div>
 
                 <!-- Epcot -->
@@ -239,4 +220,5 @@
         `<h2>Sign Up or Login to Create Your Itinerary</h2>
         <a href="users/register" class="primary-button">REGISTER</a>`
     }
+
 </div>
