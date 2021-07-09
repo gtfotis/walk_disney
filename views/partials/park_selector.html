@@ -1,5 +1,6 @@
 <div class="container">
     <h1 class="main-title">${title}</h1>
+    <p>Choose a park to add it to your itinerary and to see all of their activities, food, and more.</p>
 
     <div class="row align-items-start">
         ${data.map(park => `
@@ -12,12 +13,12 @@
                     <input type="hidden" name="park_slug" value="${park.slug}">
 
                     ${!!is_logged_in ? 
-                        `<a href="./park_selector/${park.slug}"><button type="submit" class="primary-button">SELECT PARK</button></a>`
+                        `<a href="./park_selector/${park.slug}"><button type="submit" class="primary-button">Select Park</button></a>`
 
                         :
 
                         ` <h3>Login to add a park to your Itinerary</h3>
-                        <a href="/users/login" class="primary-button">LOGIN</a>`
+                        <a href="/users/login" class="remove-activity">LOGIN</a>`
                     
                     }
                     </form> 

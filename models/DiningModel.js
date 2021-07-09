@@ -19,11 +19,11 @@ class Dining {
         }
     }
 
-    static async addDining(plan_id, food_id) {
+    static async addDining(user_id, food_id, parks_id) {
         try {
-            console.log('PLAN ID: ', plan_id);
+            console.log('PARK ID: ', parks_id);
             console.log('FOOD ID: ', food_id);
-            const query = (`UPDATE plan set food_id = ${food_id} WHERE id = ${plan_id};`);
+            const query = (`INSERT INTO plan (user_id, food_id, parks_id) VALUES (${user_id}, ${food_id}, ${parks_id});`);
             const response = await db.result(query);
             return response;
 
@@ -32,7 +32,7 @@ class Dining {
             return error;
         }
     }
-}
+};
 
 
 module.exports = Dining;

@@ -243,7 +243,6 @@ button.primary-button:hover {
         margin-right: auto;
     }
 }
-  
 .hotel-image {
     display: block;
     width: 500px;
@@ -256,8 +255,17 @@ button.primary-button:hover {
 
 .main-title {
     color: white;
-    padding-bottom:30px;
+    padding-bottom:10px;
     
+}
+
+.row {
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
+
+.col {
+    padding-bottom: 20px;
 }
 
 .remove-activity {
