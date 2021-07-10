@@ -24,7 +24,7 @@ router.get('/:slug?', async(req, res) => {
         const parkData = await ParkSelectorModel.getAll();
         res.render('template', {
             locals: {
-                title: 'Select a Park',
+                title: 'Walk Disney | Choose a Park',
                 data: parkData,
                 is_logged_in: req.session.is_logged_in
             },

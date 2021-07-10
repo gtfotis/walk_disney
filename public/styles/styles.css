@@ -21,6 +21,7 @@ a:hover {
 
 h2,h3,h4  {
     padding-bottom: 10px;
+    padding-top: 8px;
     color: white;
 }
   
@@ -93,13 +94,26 @@ h2,h3,h4  {
     color: rgb(42, 42, 92);
 }
 
+.small-text {
+    color: white;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+#registration, #loginNow {
+    color: #7ed0ff;
+}
+
+#registration:hover, #loginNow:hover {
+    color: #aae0ff;
+}
+
 /* NAVIGATION BAR ITEMS */
 
 .customHeader {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
     padding-bottom: 15px;
     background-color: rgb(42, 42, 92);
 }
@@ -108,19 +122,13 @@ h2,h3,h4  {
     margin-left: 3em;
 }
 
-.containerRight {
-    display: flex;
-    flex-direction: end;
-    justify-content: flex-end;
-}
-
 .nav {
     padding-top: 14px;
     padding-bottom: 14px;
 }
 
 .nav-item {
-    margin-right: 3em;
+    margin-right: 2em;
 }
 
 #colors a {
@@ -131,6 +139,7 @@ h2,h3,h4  {
     font-weight: normal;
     font-style: normal;
     padding-top: 20px;
+    margin-left: 50px;
 }
 
 #colors a:hover {
@@ -145,6 +154,40 @@ h2,h3,h4  {
     font-family: 'WaltographRegular';
     font-weight: normal;
     font-style: normal;
+    color: white;
+}
+
+/* Hamburger Menu */
+
+.toggle-button {
+    position: absolute;
+    top: .75rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+
+.toggle-button .bar {
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.navbar-links ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.navbar-links li a {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
     color: white;
 }
 
@@ -175,7 +218,8 @@ h2,h3,h4  {
 
 .button-container {
     display: flex;
-    padding-top: 15px;
+    padding-top: 10px;
+    margin-bottom: 5px;
 }
 
 .lodging-title {
@@ -205,33 +249,67 @@ h2,h3,h4  {
 }
 
 #firstRegisterColumn {
-    background-image: url(/images/register.jpeg);
-    background-position: bottom;
+    background-image: url(/imgs/cinderella.jpeg);
+    background-position: center;
 }
 
 
 .primary-button {
-    background-color: white;
-    color:  rgb(42, 42, 92);
-    margin-top: 5px;
-    padding: 10px 15px;
-    border-radius: 20px;
+    color:  white;
+    background: rgb(67,214,245);
+    background: linear-gradient(121deg, rgba(67,214,245,1) 26%, rgba(45,84,253,1) 100%);
+    margin-top: 15px;
+    padding: 8px 15px;
+    border-radius: 10px;
     border: 0px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-align: center;
+    
 }
 
 a.primary-button:hover {
-    color: rgb(42, 42, 92);
     font-weight: bold;
+    color:white;
 }
 
 button.primary-button:hover {
-    color: rgb(42, 42, 92);
     font-weight: bold;
+    color:white;
     border: 0px;
 }
 
+.button-container .primary-button {
+    margin-right: 20px;
+}
+
+.secondary-button {
+    color:  white;
+    background: #4e6eff;
+    margin: 3px 0px 10px 0px;
+    padding: 8px 15px;
+    border-radius: 10px;
+    border: 0px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 14px;
+}
+
+.secondary-button:hover {
+    font-weight: bold;
+    color:white;
+    border: 0px;
+}
+
+.dining-and-lodging .secondary-button {
+    margin-right: 20px;
+}
+
+
 .park-image {
     width: 500px;
+    display:block;
 }
 
 @media screen and (max-width: 840px) {
@@ -260,26 +338,24 @@ button.primary-button:hover {
 }
 
 .row {
-    padding-top: 30px;
+    padding-top: 20px;
     padding-bottom: 10px;
 }
 
 .col {
-    padding-bottom: 20px;
+    padding-bottom: 40px;
 }
 
-.remove-activity {
-    background-color: white;
-    color: rgb(42, 42, 92);
-    padding: 5px 8px;
-    margin-right: 10px;   
-    border: none;
-    border-radius: 10px;
-    margin-bottom: 10px;
+.col-6 {
+    padding-bottom: 40px;
 }
 
-button.remove-activity:hover {
-    color: rgb(133, 133, 187);
+.learn-more a, .learn-more:visited, .learn-more:link {
+    color: #7ed0ff;
+}
+
+.learn-more:hover {
+    color: #aae0ff;
 }
 
 
@@ -377,4 +453,67 @@ z-index: -100;
     max-height: 100%;
     height: auto;
     width: auto;
+}
+
+/* Hamburger Mobile Responsiveness */
+@media screen and (max-width: 960px) {
+    .toggle-button {
+        margin-top: 25px;
+        display: flex;
+    }
+    .navbar-links {
+        display: none;
+        width: 100%
+    }
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .navbar ul {
+        flex-direction: column;
+        width: 100%;
+    }
+    .navbar-links li {
+        text-align: center;
+        padding: .1rem;
+    }
+    .navbar-links.active {
+        display: flex;
+    }
+
+    .containerLeft {
+        margin-left: 10px;
+    }
+
+    .row {
+        flex-direction: row;
+    }
+
+    .col {
+        flex: auto;
+    }
+
+    .col-6 {
+        flex:auto;
+        width: 100%;
+    }
+
+    .activity-image {
+        width: 300px;
+        height: auto;
+    }
+
+    .park-image {
+        width: 300px;
+        height: auto;
+    }
+    .container {
+        width: 90%;
+    }
+
+    .primary-button, .secondary-button {
+        padding: 8px 5px;
+        font-size: 12px;
+    }
+    
 }

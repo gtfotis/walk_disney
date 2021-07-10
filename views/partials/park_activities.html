@@ -7,9 +7,9 @@
         <div class="button-container">
             <form action="/park_activities/dining" method="POST">
                 <input type="hidden" name="park_id" value="${parkId}">
-                <button type="submit" class="remove-activity">Go to Dining</button>
+                <button type="submit" class="primary-button">Go to Dining</button>
             </form>
-            <a href="/itinerary" class="remove-activity">View Itinerary</a>
+            <a href="/itinerary" class="primary-button">View Itinerary</a>
         </div>
 
         <div class="row align-items-start">
@@ -34,7 +34,7 @@
             <form action="/park_activities/add_activity" method="POST">
                 <input type="hidden" name="activity_id" value="${todo.id}">
                 <input type="hidden" name="park_id" value="${todo.park_id}">
-                <button type="submit" class="remove-activity">
+                <button type="submit" class="secondary-button">
                    Add Activity
                   </button>
                     <!-- Modal -->
@@ -58,7 +58,8 @@
         `
     
     }
+    <p><a href='https://disneyworld.disney.go.com/attractions/' target='_blank' class="learn-more">Click here</a> for a full list of Disney attractions!</p>
 </div>
 <script></script>
-    <p><a href='https://disneyworld.disney.go.com/attractions/' target='_blank'>Click here</a> for a full list of Disney attractions!</p>
+  
 </div>

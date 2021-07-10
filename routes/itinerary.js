@@ -9,7 +9,7 @@ router.get('/', async (req, res) => {
     const lodgingData = await ItineraryModel.getLodging(user_id);
     res.render('template', {
         locals: {
-            title: 'Final Itinerary',
+            title: 'Walk Disney | Your Itinerary',
             itinerary_data: theItinerary,
             lodging_data: lodgingData,
             is_logged_in: req.session.is_logged_in,
