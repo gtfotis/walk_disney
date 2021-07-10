@@ -1,11 +1,64 @@
-<form action="/users/login" method="POST">
-    <label>Email
-        <input name="user_email" type="email" placeholder="Your Email">
-    </label>
-    <br>
-    <label>Password
-        <input name="user_password" type="password" placeholder="Your Passowrd">
-    </label>
-    <br>
-    <button type="submit">Login</button>
-</form>
+<div class="registerRow">
+
+    <div class="registerColumn" id="firstRegisterColumn"></div>
+
+    <div class="registerColumn">
+
+        <form action="/users/register" method="POST" class="hideThings" id="regForm">
+            <h2>Register</h2>
+            <label>First Name
+                <input name="first_name" class="form-control" type="text">
+            </label>
+            <label>Last Name
+                <input name="last_name" class="form-control" type="text">
+            </label>
+            <label>Email
+                <input name="user_email" class="form-control" type="email">
+            </label>
+            <br>
+            <label>Password
+                <input name="user_password" class="form-control" type="password">
+            </label>
+            <br>
+            <button type="submit" class="btn btn-primary">Register</button>
+
+            <p class="small-text">Already a member? <a href="#" id="loginNow">Login here!</a></p>
+        </form>
+
+        <form action="/users/login" method="POST" class="randomClass" id="logForm">
+            <h2>Sign-in</h2>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input name="user_email" type="email" class="form-control" id="exampleInputEmail1"
+                    aria-describedby="emailHelp" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input name="user_password" type="password" class="form-control" id="exampleInputPassword1"
+                    placeholder="Password">
+            </div>
+            <center>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </center>
+            <p class="small-text">Not a member? <a href="#" id="registration">Sign up
+                    here!</a></p>
+        </form>
+    </div>
+</div>
+
+<script>
+    const loginForm = document.querySelector("#logForm")
+    const regForm = document.querySelector("#regForm")
+
+    const registerLink = document.querySelector('#registration')
+    registerLink.addEventListener('click', function () {
+        loginForm.className = "hideThings"
+        regForm.className = "randomClass"
+    })
+
+    const loginLink = document.querySelector('#loginNow')
+    loginLink.addEventListener('click', function () {
+        regForm.className = "hideThings"
+        loginForm.className = "randomClass"
+    })
+</script>

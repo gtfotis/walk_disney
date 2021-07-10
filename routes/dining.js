@@ -11,7 +11,7 @@ router.get('/:id', async (req, res) => {
     console.log('DINING: ', diningChoices)
     res.render('template', {
         locals: {
-            title: 'Dining Selection',
+            title: 'Walk Disney | Choose Your Dining',
             diningData: diningChoices,
             is_logged_in: req.session.is_logged_in,
             park_id: park_id

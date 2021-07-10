@@ -6,7 +6,7 @@ const UsersModel = require('../models/UsersModel')
 router.get('/register', (req, res) => {
     res.render('template', {
         locals: {
-            title: 'Register',
+            title: 'Walk Disney | Register',
             is_logged_in: req.session.is_logged_in
         },
         partials: {
@@ -18,7 +18,7 @@ router.get('/register', (req, res) => {
 router.get('/login', (req, res) => {
     res.render('template', {
         locals: {
-            title: 'Login',
+            title: 'Walk Disney | Login',
             is_logged_in: req.session.is_logged_in
         },
         partials: {

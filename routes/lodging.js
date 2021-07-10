@@ -9,7 +9,7 @@ router.get('/:id', async (req, res) => {
     console.log('LODGING: ', lodging)
     res.render('template', {
         locals: {
-            title: 'Lodging Page',
+            title: 'Walk Disney | Choose Your Lodging',
             lodgingData: lodging,
             is_logged_in: req.session.is_logged_in
         },

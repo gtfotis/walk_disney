@@ -9,7 +9,7 @@ router.get('/', async (req, res) => {
     const thePark = await ActivitiesModel.getActivities(parks_id);
     res.render('template', {
         locals: {
-            title: 'Select Activities',
+            title: 'Walk Disney | Choose Your Activities',
             thePark: thePark,
             is_logged_in: req.session.is_logged_in
         },
