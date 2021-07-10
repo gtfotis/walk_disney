@@ -5,9 +5,9 @@
         <div class="button-container">
             <form action="/dining/move_to_lodging" method="POST">
                 <input type="hidden" name="park_id" value="${park_id}">
-                <button type="submit" class="remove-activity">Go to Lodging</button>
+                <button type="submit" class="primary-button">Go to Lodging</button>
             </form>
-            <a href="/itinerary" class="remove-activity">View Itinerary</a>
+            <a href="/itinerary" class="primary-button">View Itinerary</a>
         </div>
 
         <div class="row align-items-start">
@@ -15,16 +15,16 @@
             ${diningData.map (restaurant => 
                 `<div class="col-6">
                     <h2>${restaurant.restaurant_name}</h2>
-                    <img src='${restaurant.restaurant_image}' width='500px'>
+                    <img src='${restaurant.restaurant_image}' width='500px' class="img-fluid">
                     <p>${restaurant.price_range}</p>
                     <p>${restaurant.cuisine}</p>
-                    <div class="button-container">
-                        <a href="${restaurant.menu}" target="_blank" class="remove-activity">View Menu</a>
+                    <div class="button-container dining-and-lodging">
+                        <a href="${restaurant.menu}" target="_blank" class="secondary-button">View Menu</a>
     
                         <form action="/dining/add" method="POST">
                             <input type="hidden" name="dining_id" value="${restaurant.id}">
                             <input type="hidden" name="park_id" value="${restaurant.park_id}">
-                            <button type="submit" class="remove-activity">Add to Itinerary</button>
+                            <button type="submit" class=" secondary-button">Add to Itinerary</button>
                             <!-- Modal -->
                     <div class="modal fade" id="submitModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -47,9 +47,7 @@
         <a href="/users/login" class="primary-button">LOGIN</a>`
     
     }
-    
+    <p><a href='https://disneyworld.disney.go.com/dining/' target='_blank' class="learn-more">Click here</a> for a full list of dining options!</p>
 </div>
 <script></script>
-    <p><a href='https://disneyworld.disney.go.com/dining/' target='_blank'>Click here</a> for a full list of dining options!</p>
-</div>
-
+    

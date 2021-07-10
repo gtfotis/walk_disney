@@ -4,8 +4,8 @@
         `<h1 class="main-title">Choose Your Lodging</h1>
         <p>We've handpicked some of the top-rated lodging for this park. Visit the hotel's website to check availability and make your reservation.</p>
         <div class="button-container">
-            <a href="/park_selector" class="remove-activity">Add Another Park</a>
-            <a href="/itinerary" class="remove-activity">View Itinerary</a>
+            <a href="/park_selector" class="primary-button">Add Another Park</a>
+            <a href="/itinerary" class="primary-button">View Itinerary</a>
         </div>
 
         <div class="row align-items-start">
@@ -13,12 +13,12 @@
                 `
                 <div class="col">
                     <h3>${hotel.lodging_name}</h3>
-                    <img src="${hotel.lodging_image}" alt="image of ${hotel.lodging_name}" class="park-image">
-                    <div class="button-container">
-                        <a href="${hotel.lodging_url}" target="_blank" class="remove-activity">Visit Website</a>
+                    <img src="${hotel.lodging_image}" alt="image of ${hotel.lodging_name}" class="park-image img-fluid">
+                    <div class="button-container dining-and-lodging">
+                        <a href="${hotel.lodging_url}" target="_blank" class="secondary-button">Visit Website</a>
                         <form action="/lodging/add" method="POST">
                             <input type="hidden" name="lodging_id" value="${hotel.id}">
-                            <button type="submit" class="remove-activity">Add to Itinerary</button>
+                            <button type="submit" class="secondary-button">Add to Itinerary</button>
                         </form>
                     </div>
                 
@@ -31,5 +31,5 @@
     `<h3>Login to add a hotel to your Itinerary</h3>
     <a href="/users/login" class="primary-button">LOGIN</a>`
 }
-   <p><a href='https://disneyworld.disney.go.com/resorts/' target='_blank'>Click here</a> for more lodging options!</p>
+   <p><a href='https://disneyworld.disney.go.com/resorts/' target='_blank' class="learn-more">Click here</a> for more lodging options!</p>
 </div>

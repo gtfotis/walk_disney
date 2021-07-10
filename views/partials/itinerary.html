@@ -7,9 +7,9 @@
                 <div class="row align-items-start ">
                     <div class="col">
                         <h2>Magic Kingdom</h2>
-                        <img src="imgs/magic_kingdom.jpeg" class="park-image">
+                        <img src="imgs/magic_kingdom.jpeg" class="park-image img-fluid">
                         <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#magicModal">
+            <button type="button" class="primary-button" data-toggle="modal" data-target="#magicModal">
                 View Map
               </button>
             
@@ -34,7 +34,7 @@
                                     <p>Time: ${activity.activity_time}</p>
                                     <form action="/itinerary/delete_activity" method="POST">
                                         <input type="hidden" name="activity_id" value="${activity.activity_id}">
-                                        <button class="remove-activity">Remove Activity</button>
+                                        <button class="secondary-button">Remove Activity</button>
                                     </form>`
                                     :
                                     ``
@@ -56,11 +56,11 @@
                                 `
                                 ${restaurant.food_id !== null ? 
                                     ` <h4>${restaurant.restaurant_name}</h4>
-                                    <div class="button-container">
-                                        <a href="${restaurant.menu}" class="remove-activity">View Menu</a>
+                                    <div class="button-container dining-and-lodging">
+                                        <a href="${restaurant.menu}" class="secondary-button">View Menu</a>
                                         <form action="/itinerary/delete_food" method="POST">
                                             <input type="hidden" name="food_id" value="${restaurant.food_id}">
-                                            <button class="remove-activity">Remove Restaurant</button>
+                                            <button class="secondary-button">Remove Restaurant</button>
                                         </form>
                                     </div>
                                     `
@@ -83,9 +83,9 @@
                 <div class="row align-items-start">
                     <div class="col">
                         <h2>Animal Kingdom</h2>
-                        <img src="imgs/animal_kingdom.jpeg" class="park-image">
+                        <img src="imgs/animal_kingdom.jpeg" class="park-image img-fluid">
                         <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#animalModal">
+            <button type="button" class="primary-button" data-toggle="modal" data-target="#animalModal">
                 View Map
               </button>
 
@@ -110,7 +110,7 @@
                                     <p>Time: ${activity.activity_time}</p>
                                     <form action="/itinerary/delete_activity" method="POST">
                                         <input type="hidden" name="activity_id" value="${activity.activity_id}">
-                                        <button class="remove-activity">Remove Activity</button>
+                                        <button class="secondary-button">Remove Activity</button>
                                     </form>`
                                     :
                                     ``
@@ -132,11 +132,11 @@
                             `${restaurant.parks_id === 2 ? 
                                 `${restaurant.food_id !== null ? 
                                     ` <h4>${restaurant.restaurant_name}</h4>
-                                    <div class="button-container">
-                                        <a href="${restaurant.menu}" class="remove-activity">View Menu</a>
+                                    <div class="button-container dining-and-lodging">
+                                        <a href="${restaurant.menu}" class="secondary-button">View Menu</a>
                                         <form action="/itinerary/delete_food" method="POST">
                                             <input type="hidden" name="food_id" value="${restaurant.food_id}">
-                                            <button class="remove-activity">Remove Restaurant</button>
+                                            <button class="secondary-button">Remove Restaurant</button>
                                         </form>
                                     </div>
                                     `
@@ -159,9 +159,9 @@
                 <div class="row align-items-start">
                     <div class="col">
                         <h2>Epcot</h2>
-                        <img src="imgs/epcot.jpeg" class="park-image">
+                        <img src="imgs/epcot.jpeg" class="park-image img-fluid">
                         <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#epcotModal">
+            <button type="button" class="primary-button" data-toggle="modal" data-target="#epcotModal">
                 View Map
               </button>
     
@@ -186,7 +186,7 @@
                                     <p>Time: ${activity.activity_time}</p>
                                     <form action="/itinerary/delete_activity" method="POST">
                                         <input type="hidden" name="activity_id" value="${activity.activity_id}">
-                                        <button class="remove-activity">Remove Activity</button>
+                                        <button class="secondary-button">Remove Activity</button>
                                     </form>`
                                     :
                                     ``
@@ -208,11 +208,11 @@
                                 `
                                 ${restaurant.food_id !== null ? 
                                     ` <h4>${restaurant.restaurant_name}</h4>
-                                    <div class="button-container">
-                                        <a href="${restaurant.menu}" class="remove-activity">View Menu</a>
+                                    <div class="button-container dining-and-lodging">
+                                        <a href="${restaurant.menu}" class="secondary-button">View Menu</a>
                                         <form action="/itinerary/delete_food" method="POST">
                                             <input type="hidden" name="food_id" value="${restaurant.food_id}">
-                                            <button class="remove-activity">Remove Restaurant</button>
+                                            <button class="secondary-button">Remove Restaurant</button>
                                         </form>
                                     </div>
                                     `
@@ -234,9 +234,9 @@
                  <div class="row align-items-start">
                     <div class="col">
                         <h2>Hollywood Studios</h2>
-                        <img src="imgs/hollywood_studios.jpeg" class="park-image">
+                        <img src="imgs/hollywood_studios.jpeg" class="park-image img-fluid">
                         <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#hollywoodModal">
+            <button type="button" class="primary-button" data-toggle="modal" data-target="#hollywoodModal">
                 View Map
               </button>
     
@@ -261,7 +261,7 @@
                                     <p>Time: ${activity.activity_time}</p>
                                     <form action="/itinerary/delete_activity" method="POST">
                                         <input type="hidden" name="activity_id" value="${activity.activity_id}">
-                                        <button class="remove-activity">Remove Activity</button>
+                                        <button class="secondary-button">Remove Activity</button>
                                     </form>`
                                     :
                                     ``
@@ -283,11 +283,11 @@
                                 `
                                 ${restaurant.food_id !== null ? 
                                     ` <h4>${restaurant.restaurant_name}</h4>
-                                    <div class="button-container">
-                                        <a href="${restaurant.menu}" class="remove-activity">View Menu</a>
+                                    <div class="button-container dining-and-lodging">
+                                        <a href="${restaurant.menu}" class="secondary-button">View Menu</a>
                                         <form action="/itinerary/delete_food" method="POST">
                                             <input type="hidden" name="food_id" value="${restaurant.food_id}">
-                                            <button class="remove-activity">Remove Restaurant</button>
+                                            <button class="secondary-button">Remove Restaurant</button>
                                         </form>
                                     </div>
                                     `
@@ -315,11 +315,11 @@
                                     <h2>Your Lodging</h2>
                                     <h3>${hotel.lodging_name}</h3>
                                     <img src="${hotel.lodging_image}" class="hotel-image">
-                                    <div class="button-container">
-                                        <a href="${hotel.lodging_url}" target="_blank" class="remove-activity">Visit Website</a>
+                                    <div class="button-container dining-and-lodging">
+                                        <a href="${hotel.lodging_url}" target="_blank" class="secondary-button">Visit Website</a>
                                         <form action="/itinerary/delete_lodging" method="POST">
                                             <input type="hidden" name="lodging_id" value=${hotel.lodging_id}>
-                                            <button type="submit" class="remove-activity">Remove Lodging</button>
+                                            <button type="submit" class="secondary-button">Remove Lodging</button>
                                         </form>
                                     </div>
                                 </div>
@@ -337,7 +337,7 @@
                 :
 
                 `<h2>Start Planning Your Trip by Going to the Park Selector Page!</h2>
-                <a href="/park_selector" class="remove-activity">Choose a Park</a>`
+                <a href="/park_selector" class="primary-button">Choose a Park</a>`
             }
         
         
@@ -349,8 +349,8 @@
         :
         `<h2>Sign Up or Login to Create Your Itinerary</h2>
         <div class="button-container">
-            <a href="users/register" class="remove-activity">Register</a>
-            <a href="users/login" class="remove-activity">Login</a>
+            <a href="users/register" class="primary-button">Register</a>
+            <a href="users/login" class="primary-button">Login</a>
         </div>
         `
     }

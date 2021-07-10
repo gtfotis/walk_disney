@@ -21,6 +21,7 @@ a:hover {
 
 h2,h3,h4  {
     padding-bottom: 10px;
+    padding-top: 8px;
     color: white;
 }
   
@@ -217,7 +218,8 @@ h2,h3,h4  {
 
 .button-container {
     display: flex;
-    padding-top: 15px;
+    padding-top: 10px;
+    margin-bottom: 5px;
 }
 
 .lodging-title {
@@ -253,24 +255,57 @@ h2,h3,h4  {
 
 
 .primary-button {
-    background-color: white;
-    color:  rgb(42, 42, 92);
-    margin-top: 5px;
-    padding: 10px 15px;
-    border-radius: 20px;
+    color:  white;
+    background: rgb(67,214,245);
+    background: linear-gradient(121deg, rgba(67,214,245,1) 26%, rgba(45,84,253,1) 100%);
+    margin-top: 15px;
+    padding: 8px 15px;
+    border-radius: 10px;
     border: 0px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-align: center;
+    display: block;
 }
 
 a.primary-button:hover {
-    color: rgb(42, 42, 92);
     font-weight: bold;
+    color:white;
 }
 
 button.primary-button:hover {
-    color: rgb(42, 42, 92);
     font-weight: bold;
+    color:white;
     border: 0px;
 }
+
+.button-container .primary-button {
+    margin-right: 20px;
+}
+
+.secondary-button {
+    color:  white;
+    background: #4e6eff;
+    margin: 3px 0px 10px 0px;
+    padding: 8px 15px;
+    border-radius: 10px;
+    border: 0px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 14px;
+}
+
+.secondary-button:hover {
+    font-weight: bold;
+    color:white;
+    border: 0px;
+}
+
+.dining-and-lodging .secondary-button {
+    margin-right: 20px;
+}
+
 
 .park-image {
     width: 500px;
@@ -302,26 +337,24 @@ button.primary-button:hover {
 }
 
 .row {
-    padding-top: 30px;
+    padding-top: 20px;
     padding-bottom: 10px;
 }
 
 .col {
-    padding-bottom: 20px;
+    padding-bottom: 40px;
 }
 
-.remove-activity {
-    background-color: white;
-    color: rgb(42, 42, 92);
-    padding: 5px 8px;
-    margin-right: 10px;   
-    border: none;
-    border-radius: 10px;
-    margin-bottom: 10px;
+.col-6 {
+    padding-bottom: 40px;
 }
 
-button.remove-activity:hover {
-    color: rgb(133, 133, 187);
+.learn-more a, .learn-more:visited, .learn-more:link {
+    color: #7ed0ff;
+}
+
+.learn-more:hover {
+    color: #aae0ff;
 }
 
 
@@ -450,4 +483,36 @@ z-index: -100;
     .containerLeft {
         margin-left: 10px;
     }
+
+    .row {
+        flex-direction: row;
+    }
+
+    .col {
+        flex: auto;
+    }
+
+    .col-6 {
+        flex:auto;
+        width: 100%;
+    }
+
+    .activity-image {
+        width: 300px;
+        height: auto;
+    }
+
+    .park-image {
+        width: 300px;
+        height: auto;
+    }
+    .container {
+        width: 90%;
+    }
+
+    .primary-button, .secondary-button {
+        padding: 8px 5px;
+        font-size: 12px;
+    }
+    
 }
