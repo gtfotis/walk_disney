@@ -6,8 +6,7 @@
         ${data.map(park => `
             <div class="col">
                 <h2>${park.park_name}</h2>
-                <img src='${park.park_image}' class="park-image">
-                </a>
+                <p class="park-description">${park.park_description}</p>
                 <form action="park_selector/update" method="POST">
                     <input type="hidden" name="parks_id" value="${park.id}">
                     <input type="hidden" name="park_slug" value="${park.slug}">
@@ -18,10 +17,16 @@
                         :
 
                         ` <h4>Login to add a park to your Itinerary</h4>
-                        <a href="/users/login" class="primary-button">LOGIN</a>`
+                        <div class="button-container">
+                            <a href="users/register" class="primary-button">Register</a>
+                            <a href="/users/login" class="primary-button">Login</a>
+                        </div>
+                       `
                     
                     }
                     </form> 
+                <img src='${park.park_image}' class="park-image">
+               
             </div>
            
             `).join('')}

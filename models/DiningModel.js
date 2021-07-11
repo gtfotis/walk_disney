@@ -8,9 +8,7 @@ class Dining {
     static async getDining(park_id) {
         try {
             const query = (`SELECT * FROM food WHERE park_id = ${park_id};`);
-            console.log(query);
             const response = await db.any(query);
-            console.log(response);
             return response; 
 
         } catch(error) {
@@ -21,8 +19,6 @@ class Dining {
 
     static async addDining(user_id, food_id, parks_id) {
         try {
-            console.log('PARK ID: ', parks_id);
-            console.log('FOOD ID: ', food_id);
             const query = (`INSERT INTO plan (user_id, food_id, parks_id) VALUES (${user_id}, ${food_id}, ${parks_id});`);
             const response = await db.result(query);
             return response;

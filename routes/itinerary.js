@@ -27,9 +27,7 @@ router.get('/', async (req, res) => {
 router.post('/delete_activity', async (req, res) => {
     const { activity_id } = req.body;
     const user_id = req.session.user_id;
-    console.log(req.body);
     const response = await ItineraryModel.removeActivity(activity_id, user_id);
-    console.log('UPDATE RESPONSE, ', response);
     res.redirect('back');
 
 });
@@ -38,7 +36,6 @@ router.post('/delete_lodging', async (req, res) => {
     const { lodging_id } = req.body;
     const user_id = req.session.user_id;
     const response = await ItineraryModel.removeLodging(lodging_id, user_id);
-    console.log('DELETE LODGING RESPONSE: ', response);
     res.redirect('back');
 });
 
