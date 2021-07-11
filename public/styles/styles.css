@@ -8,9 +8,6 @@ body {
 }
 
 /* ALL UN-CLASSED TAG EFFECTS  --> */
-img {
-    border-radius: 10px;
-}
 
 p { 
     color: white;
