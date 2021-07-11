@@ -9,13 +9,15 @@
 
     <div class="welcomeText">
         <h2>Welcome to WalkDisney!</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque, magnam.</p>
+        <p>Planning a trip to Disney World?</p>
+        <p>Click below and begin creating an itinerary today!</p>
 
         ${!!is_logged_in ?
-        `<a href="/park_selector"><button type="button" href="#">Plan your Trip!</button></a>`
+        `<a href="/park_selector"><button type="button" class="btn btn-outline-light" href="#">Plan your
+                Trip!</button></a>`
         :
         `
-        <a href="/users/register"><button>Create an Account!</button></a>
+        <a href="/users/register"><button type="button" class="btn btn-outline-light">Create an Account!</button></a>
         `
         }
     </div>
@@ -26,24 +28,24 @@
     <div>
         <img src="/images/disneymouse.jpeg">
         <h2>Parks</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea delectus facilis voluptates placeat
-            quisquam architecto.
-        </p>
+        <p>Choose from a selection of four parks to start your adventure! Get a glimpse of
+            the various events, lodging and dining options to help with your selection!</p>
     </div>
 
     <div>
         <img src="/images/pops.jpeg">
-        <h2>Dining</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis veniam fugiat voluptas magni,
-            qui
-            beatae.</p>
+        <h2>Dining + Lodging</h2>
+        <p>Browse through dining options and schedule your stay at one of the many options based on the park of your
+            choice!</p>
     </div>
 
     <div>
-        <img src="/images/lodge.jpeg">
-        <h2>Lodging</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero corrupti voluptate, suscipit
-            repellat
-            sint aut.</p>
+        <img src="/images/rides.jpeg">
+        <h2>Events</h2>
+        <p>Explore magical events, exciting attractions and plan ahead today!</p>
     </div>
 </div>
+
+<footer>© WalkDisney, All Rights Reserved.
+    <br>Including the name.
+</footer>
