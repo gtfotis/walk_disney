@@ -12,6 +12,7 @@ body {
 
 p { 
     color: white;
+    font-family: 'Open Sans', sans-serif;
 }
 
 a {
@@ -23,8 +24,13 @@ a:hover {
     cursor: url('/images/glove3.png'), auto;
 }
 
+h1 {
+   font-family: 'WaltographRegular';
+   color: white;
+}
+
 h2,h3,h4 {
-    font-family: 'WaltographRegular';
+    font-family: 'Nunito Sans', sans-serif;
     padding-bottom: 10px;
     padding-top: 8px;
     color: white;
