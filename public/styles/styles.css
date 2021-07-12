@@ -8,6 +8,8 @@ body {
     position: relative;
 }
 
+/* ALL UN-CLASSED TAG EFFECTS  --> */
+
 p { 
     color: white;
 }
@@ -21,7 +23,8 @@ a:hover {
     cursor: url('/images/glove3.png'), auto;
 }
 
-h2,h3,h4  {
+h2,h3,h4 {
+    font-family: 'WaltographRegular';
     padding-bottom: 10px;
     padding-top: 8px;
     color: white;
@@ -433,21 +436,33 @@ button.primary-button:hover {
     width: 100%;
     padding: 20px;
     align-self: flex-end;
+    font-size: 20px;
+}
+
+.welcomeText button {
+    padding-left: 40px;
+    padding-right: 40px;
 }
 
 .welcomeBoxes {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
     padding-top: 20px;
 }
 
 .welcomeBoxes div {
     margin: 20px;
+    width: 400px;
+    height: 450px;
 }
 
 .welcomeBoxes img {
-    max-width: 100%;
-    height: auto;
+    /* height: auto; */
+    height: 200px;
+    width: 300px;
     border-radius: 10px;
     margin-bottom: 20px;
 }
