@@ -17,7 +17,8 @@ function selectImagePath() {
     const imagePaths = {
         '1': '/images/pluto2.png',
         '2': '/images/mickey_mouse.png',
-        '3': '/images/stitch.png'
+        '3': '/images/stitch.png',
+        '4': '/images/sven.png'
     };
     // Total Number of Keys
     const totalImages = Object.keys(imagePaths).length;
