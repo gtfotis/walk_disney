@@ -278,6 +278,15 @@ hr {
     padding: 70px;
 }
 
+@media only screen and (max-width: 500px) {
+    .registerColumn { 
+        padding: 20px;
+        height: 450px;
+    }
+    #firstRegisterColumn {
+        display: none;
+    }
+}
 
 .registerRow form {
     color: white;
