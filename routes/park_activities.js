@@ -33,7 +33,6 @@ router.post('/add_activity', async (req, res) => {
 
 router.post('/dining', (req, res) => {
     const { park_id } = req.body;
-    console.log('PARK ID REQ BODY IS: ', req.body);
     res.redirect(`/dining/${park_id}`);
 })
 

@@ -38,7 +38,6 @@ router.get('/:slug?', async(req, res) => {
 
 router.post('/update', async (req, res) => {
     const { parks_id, park_slug } = req.body;
-    console.log('REQ BODY IS: ', req.body);
     const user_id = req.session.user_id;
     const newItinerary = new ParkSelectorModel(null, user_id, parks_id, null, null, null);
     const response = await newItinerary.addParkId();
