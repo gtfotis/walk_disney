@@ -5,35 +5,34 @@
 
     <div class="row align-items-start">
         ${data.map(park => `
-        <div class="col">
-            <h2>${park.park_name}</h2>
-            <img src='${park.park_image}' class="park-image" width="100%" height='300px'>
-            </a>
-            <p class="park-description">${park.park_description}</p>
-            <form action="park_selector/update" method="POST">
-                <input type="hidden" name="parks_id" value="${park.id}">
-                <input type="hidden" name="park_slug" value="${park.slug}">
+            <div class="col">
+                <h2>${park.park_name}</h2>
+                <img src='${park.park_image}' class="park-image">
+                <p class="park-description">${park.park_description}</p>
+                <form action="park_selector/update" method="POST">
+                    <input type="hidden" name="parks_id" value="${park.id}">
+                    <input type="hidden" name="park_slug" value="${park.slug}">
 
-                ${!!is_logged_in ?
-                `<a href="./park_selector/${park.slug}"><button type="submit" class="primary-button">Select
-                        Park</button></a>`
+                    ${!!is_logged_in ? 
+                        `<a href="./park_selector/${park.slug}"><button type="submit" class="primary-button">Select Park</button></a>`
 
-                :
+                        :
 
-                ` <h4>Login to add a park to your Itinerary</h4>
-                <div class="button-container">
-                    <a href="users/register" class="primary-button">Register</a>
-                    <a href="/users/login" class="primary-button">Login</a>
-                </div>
-                `
+                        ` <h4>Login to add a park to your Itinerary</h4>
+                        <div class="button-container">
+                            <a href="users/register" class="primary-button">Register</a>
+                            <a href="/users/login" class="primary-button">Login</a>
+                        </div>
+                       `
+                    
+                    }
+                    </form> 
 
-                }
-            </form>
-
-        </div>
-
-        `).join('')}
-    </div>
-
+               
+            </div>
+           
+            `).join('')}
+      </div>
+   
 
 </div>
