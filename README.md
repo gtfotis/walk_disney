@@ -12,6 +12,7 @@ Create an account and make your itinerary at [Walk Disney - link coming soon](#)
 
 ## Screenshots
 
+![gif of Walk Disney](/public/imgs/walk_disney_recording.gif)
 ![screenshot of the itinerary page](/public/imgs/itinerary.png)
 
 ## Future Goals
