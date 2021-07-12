@@ -16,8 +16,9 @@
             ${data.map(todo => `
                 <div class="col">
                 <h3>${todo.activity_name}</h3>
-                <p>${todo.activity_description}</p>
+                
                 <img src="${todo.activity_image}" width='500px' height='300px' alt="Image of ${todo.activity_name}" class="activity-image">
+                <p>${todo.activity_description}</p>
                 <p>Time Slot: ${todo.activity_time}</p>
                 <p>Kid Friendly: ${!!todo.kid_friendly ? 
                     `Yes`
