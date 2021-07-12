@@ -13,7 +13,9 @@
                 `
                 <div class="col">
                     <h3>${hotel.lodging_name}</h3>
-                    <img src="${hotel.lodging_image}" alt="image of ${hotel.lodging_name}" class="park-image">
+                    <img src="${hotel.lodging_image}" width="100%" height="250px" alt="image of ${hotel.lodging_name}" class="park-image">
+                    <br>
+                    <p>${hotel.lodging_description}</p>
                     <div class="button-container dining-and-lodging">
                         <a href="${hotel.lodging_url}" target="_blank" class="secondary-button">Visit Website</a>
                         <form action="/lodging/add" method="POST">

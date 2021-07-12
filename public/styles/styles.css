@@ -415,6 +415,7 @@ button.primary-button:hover {
     border-radius: 10px;
     background-image: url(/imgs/castle_overlay.png);
     background-position: center;
+    background-repeat: no-repeat;
 }
 
 /* It's a secret. */
