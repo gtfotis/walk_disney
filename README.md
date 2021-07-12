@@ -10,10 +10,9 @@ Create an account and make your itinerary at [Walk Disney - link coming soon](#)
 * Activities, Dining, and Lodging can both be added and deleted from the itinerary. 
 * Dining, lodging, and activities include helpful information such as websites, descriptions, times, and price range.
 
-## Screenshots
+## Walk Through
 
 ![gif of Walk Disney](/public/imgs/walk_disney_recording.gif)
-![screenshot of the itinerary page](/public/imgs/itinerary.png)
 
 ## Future Goals
 
