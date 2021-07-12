@@ -28,6 +28,10 @@ h2,h3,h4 {
     padding-top: 8px;
     color: white;
 }
+
+hr {
+    color:rgb(174, 224, 247);
+}
   
 /* Itinerary Page Styles */
 .park-image {
