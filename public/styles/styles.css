@@ -35,6 +35,10 @@ h2,h3,h4 {
     padding-top: 8px;
     color: white;
 }
+
+hr {
+    color:rgb(174, 224, 247);
+}
   
 /* Itinerary Page Styles */
 .park-image {
@@ -60,6 +64,7 @@ h2,h3,h4 {
 
 .park-description {
     width: 500px;
+    margin-top: 15px;
 }
 
 /* CAROUSEL ITEMS */
@@ -274,6 +279,15 @@ h2,h3,h4 {
     padding: 70px;
 }
 
+@media only screen and (max-width: 500px) {
+    .registerColumn { 
+        padding: 20px;
+        height: 450px;
+    }
+    #firstRegisterColumn {
+        display: none;
+    }
+}
 
 .registerRow form {
     color: white;
@@ -411,6 +425,7 @@ button.primary-button:hover {
     border-radius: 10px;
     background-image: url(/imgs/castle_overlay.png);
     background-position: center;
+    background-repeat: no-repeat;
 }
 
 /* It's a secret. */
