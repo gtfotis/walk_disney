@@ -2,6 +2,7 @@
     ${!!is_logged_in ?
     `
     <h1 class="main-title">${first_name}'s Itinerary</h1>
+    <p>Here's a peek at your next adventure!</p>
     <hr>
     ${itinerary_data.length > 0 ?
     `
@@ -165,10 +166,10 @@
             <h2>Epcot</h2>
             <img src="imgs/epcot.jpeg" class="park-image img-fluid">
             <!-- Button trigger modal -->
-            <div class="button-container dining-and-lodging"><button type="button" class="secondary-button" data-toggle="modal" data-target="#epcotModal">
+            <div class="button-container dining-and-lodging"></div><button type="button" class="secondary-button" data-toggle="modal" data-target="#epcotModal">
                 View Map
             </button>
-            <a href="/park_selector/epcot" class="secondary-button">Add Activities</a></div>
+            <a href="/park_selector/epcot" class="secondary-button">Add Activities</a>
             <!-- Modal -->
             <div class="modal fade" id="epcotModal" tabindex="-1" role="dialog"
                 aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -241,10 +242,10 @@
             <h2>Hollywood Studios</h2>
             <img src="imgs/hollywood_studios.jpeg" class="park-image img-fluid">
             <!-- Button trigger modal -->
-            <div class="button-container dining-and-lodging"><button type="button" class="secondary-button" data-toggle="modal" data-target="#hollywoodModal">
+            <button type="button" class="secondary-button" data-toggle="modal" data-target="#hollywoodModal">
                 View Map
             </button>
-            <a href="/park_selector/hollywood_studios" class="secondary-button">Add Activities</a></div>
+            <a href="/park_selector/hollywood_studios" class="secondary-button">Add Activities</a>
             <!-- Modal -->
             <div class="modal fade" id="hollywoodModal" tabindex="-1" role="dialog"
                 aria-labelledby="exampleModalCenterTitle" aria-hidden="true">

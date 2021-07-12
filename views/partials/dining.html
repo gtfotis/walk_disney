@@ -1,7 +1,8 @@
 <div class="container">
     ${!!is_logged_in ? 
         `<h1 class="main-title">Choose Your Dining</h1>
-        <p>When you're done selecting restuarants, click the button below to continue on to lodging.</p>
+        <p>When you're done selecting your dining options, click the button below to continue on to lodging, or skip right to your itinerary!</p>
+        <hr>
         <div class="button-container">
             <form action="/dining/move_to_lodging" method="POST">
                 <input type="hidden" name="park_id" value="${park_id}">
