@@ -28,20 +28,34 @@ h2,h3,h4 {
     padding-top: 8px;
     color: white;
 }
+
+hr {
+    color:rgb(174, 224, 247);
+}
   
 /* Itinerary Page Styles */
 .park-image {
     width: 300px;
+    margin-top: 40px;
 }
 
 .lodging-image {
     width: 400px;
 }
 
+.img-fluid {
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
+
 .btn-primary {
     display: block;
     width: 150px;
     margin-top: 10px;
+}
+
+.park-description {
+    width: 500px;
 }
 
 /* CAROUSEL ITEMS */
@@ -100,6 +114,7 @@ h2,h3,h4 {
 
 .small-text {
     color: white;
+    display: block;
     font-size: 14px;
     margin-top: 5px;
 }
@@ -226,8 +241,16 @@ h2,h3,h4 {
     margin-bottom: 5px;
 }
 
+.modal-body .button-container {
+    justify-content: center;
+}
+
 .lodging-title {
     margin-top: 30px;
+}
+
+.login-prompt {
+    margin-top: 80px;
 }
 
 /* REGISTER ITEMS */
@@ -314,6 +337,7 @@ button.primary-button:hover {
 .park-image {
     width: 500px;
     display:block;
+    border-radius: 10px;
 }
 
 @media screen and (max-width: 840px) {
@@ -333,6 +357,8 @@ button.primary-button:hover {
 
 .activity-image {
     width: 400px;
+    margin-bottom: 15px;
+    border-radius: 10px;
 }
 
 .main-title {
@@ -372,12 +398,15 @@ button.primary-button:hover {
 .modal-body h3 {
     color: white;
     text-align: center;
-    margin-top: 50px;
+    padding-top: 70px;
 }
 
 .modal-body {
-    height: 200px;
+    height: 300px;
     background-color: rgb(42, 42, 92);
+    border-radius: 10px;
+    background-image: url(/imgs/castle_overlay.png);
+    background-position: center;
 }
 
 /* It's a secret. */
@@ -385,7 +414,6 @@ button.primary-button:hover {
 .hideThings {
     display: none;
 }
-
 
 @media screen and (max-width: 840px) {
     .carousel {
@@ -471,6 +499,34 @@ z-index: -100;
     width: auto;
 }
 
+/* Footer Stuff */
+.wrapper {
+    min-height: 100vh; /* will cover the 100% of viewport */
+    overflow: hidden;
+    display: block;
+    position: relative;
+    padding-bottom: 100px; /* height of your footer */
+   
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    font-size: 12px;
+    color: white;
+    text-align: center;
+    background-color: rgb(34, 34, 75);
+    padding-top: 20px;
+    padding-bottom: 20px;
+   }
+   
+body {
+    height: 100%;
+    position: relative;
+}
+
+
 /* Hamburger Mobile Responsiveness */
 @media screen and (max-width: 960px) {
     .toggle-button {
@@ -514,15 +570,16 @@ z-index: -100;
         width: 100%;
     }
 
-    .activity-image {
+    .park-image, .error-image, .activity-image {
         width: 300px;
         height: auto;
     }
 
-    .park-image {
+    .park-description {
         width: 300px;
-        height: auto;
     }
+    
+
     .container {
         width: 90%;
     }
@@ -530,6 +587,10 @@ z-index: -100;
     .primary-button, .secondary-button {
         padding: 8px 5px;
         font-size: 12px;
+    }
+
+    .login-prompt {
+        margin-top: 10px;
     }
     
 }

@@ -49,7 +49,6 @@ class Itinerary {
             const query = (`
             UPDATE plan SET activity_id = null WHERE activity_id = ${activity_id} AND user_id = ${user_id};
             `);
-            console.log(query);
             const response = await db.any(query);
             return response;
             

@@ -5,10 +5,8 @@ const DiningModel = require('../models/DiningModel');
 
 router.get('/:id', async (req, res) => {
     const { id } = req.params;
-    console.log('DINING ID: ',id);
     const park_id = id;
     const diningChoices = await DiningModel.getDining(id);
-    console.log('DINING: ', diningChoices)
     res.render('template', {
         locals: {
             title: 'Walk Disney | Choose Your Dining',
@@ -38,7 +36,6 @@ router.post('/add', async (req, res) => {
 
 router.post('/move_to_lodging', (req, res) => {
     const { park_id } = req.body;
-    console.log("PARK ID REQ BODY FOR DINING: ", req.body);
     res.redirect(`/lodging/${park_id}`);
 });
 
