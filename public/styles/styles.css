@@ -4,6 +4,8 @@ html {
 
 body { 
     background-color: rgb(42, 42, 92); 
+    height: 100%;
+    position: relative;
 }
 
 p { 
@@ -499,13 +501,7 @@ footer {
     background-color: rgb(34, 34, 75);
     padding-top: 20px;
     padding-bottom: 20px;
-   }
-   
-body {
-    height: 100%;
-    position: relative;
 }
-
 
 /* Hamburger Mobile Responsiveness */
 @media screen and (max-width: 960px) {
