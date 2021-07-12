@@ -1,96 +1,99 @@
 <div class="container">
-    ${!!is_logged_in ? 
-        `   
-            <h1 class="main-title">${first_name}'s Itinerary</h1>
-            ${itinerary_data.length > 0 ?
-                `
-                <div class="row align-items-start ">
-                    <div class="col">
-                        <h2>Magic Kingdom</h2>
-                        <img src="imgs/magic_kingdom.jpeg" class="park-image img-fluid">
-                        <!-- Button trigger modal -->
+    ${!!is_logged_in ?
+    `
+    <h1 class="main-title">${first_name}'s Itinerary</h1>
+    <hr>
+    ${itinerary_data.length > 0 ?
+    `
+    <div class="row align-items-start ">
+        <div class="col">
+            <h2>Magic Kingdom</h2>
+            <img src="imgs/magic_kingdom.jpeg" class="park-image img-fluid">
+            <!-- Button trigger modal -->
             <button type="button" class="primary-button" data-toggle="modal" data-target="#magicModal">
                 View Map
-              </button>
-            
-                        <!-- Modal -->
-                        <div class="modal fade" id="magicModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered" role="document">
-                                <div class="modal-content" id='mapcontent'>
-                                    <div class="modal-body" id='mapcontent'>
-                                        <img src='../images/magic_kingdom_map.jpeg' width='1000px' class='modalmap'>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <h3>Activities</h3>
-                        ${itinerary_data.map (activity =>
-                            `${activity.parks_id === 1 ? 
-                                `
-                                ${activity.activity_id !== null ?
-                                    `<h4>${activity.activity_name}</h4>
-                                    <p>Time: ${activity.activity_time}</p>
-                                    <form action="/itinerary/delete_activity" method="POST">
-                                        <input type="hidden" name="activity_id" value="${activity.activity_id}">
-                                        <button class="secondary-button">Remove Activity</button>
-                                    </form>`
-                                    :
-                                    ``
-                                
-                                }
-                                
-                                `
-                                :
-                                ``
-                            
-                            }`
-                            
-                            ).join('')}
-                    </div>
-                    <div class="col">
-                        <h3>Dining</h3>
-                        ${itinerary_data.map (restaurant =>
-                            `${restaurant.parks_id === 1 ? 
-                                `
-                                ${restaurant.food_id !== null ? 
-                                    ` <h4>${restaurant.restaurant_name}</h4>
-                                    <div class="button-container dining-and-lodging">
-                                        <a href="${restaurant.menu}" class="secondary-button">View Menu</a>
-                                        <form action="/itinerary/delete_food" method="POST">
-                                            <input type="hidden" name="food_id" value="${restaurant.food_id}">
-                                            <button class="secondary-button">Remove Restaurant</button>
-                                        </form>
-                                    </div>
-                                    `
-                                    :
-                                    ``
-                                }
-                                
-                                `
-                                :
-                                ``
-                            
-                            }`
-                            
-                            ).join('')}
-                    </div>
-
-                </div>
-
-                <!-- ANIMAL KINGDOM -->
-                <div class="row align-items-start">
-                    <div class="col">
-                        <h2>Animal Kingdom</h2>
-                        <img src="imgs/animal_kingdom.jpeg" class="park-image img-fluid">
-                        <!-- Button trigger modal -->
-            <button type="button" class="primary-button" data-toggle="modal" data-target="#animalModal">
-                View Map
-              </button>
+            </button>
 
             <!-- Modal -->
-            <div class="modal fade" id="animalModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal fade" id="magicModal" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content" id='mapcontent'>
+                        <div class="modal-body" id='mapcontent'>
+                            <img src='../images/magic_kingdom_map.jpeg' width='1000px' class='modalmap'>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <h3>Activities</h3>
+            ${itinerary_data.map (activity =>
+            `${activity.parks_id === 1 ?
+            `
+            ${activity.activity_id !== null ?
+            `<h4>${activity.activity_name}</h4>
+            <p>Time: ${activity.activity_time}</p>
+            <form action="/itinerary/delete_activity" method="POST">
+                <input type="hidden" name="activity_id" value="${activity.activity_id}">
+                <button class="secondary-button">Remove Activity</button>
+            </form>`
+            :
+            ``
+
+            }
+
+            `
+            :
+            ``
+
+            }`
+
+            ).join('')}
+        </div>
+        <div class="col">
+            <h3>Dining</h3>
+            ${itinerary_data.map (restaurant =>
+            `${restaurant.parks_id === 1 ?
+            `
+            ${restaurant.food_id !== null ?
+            ` <h4>${restaurant.restaurant_name}</h4>
+            <div class="button-container dining-and-lodging">
+                <a href="${restaurant.menu}" class="secondary-button">View Menu</a>
+                <form action="/itinerary/delete_food" method="POST">
+                    <input type="hidden" name="food_id" value="${restaurant.food_id}">
+                    <button class="secondary-button">Remove Restaurant</button>
+                </form>
+            </div>
+            `
+            :
+            ``
+            }
+
+            `
+            :
+            ``
+
+            }`
+
+            ).join('')}
+        </div>
+
+    </div>
+
+    <!-- ANIMAL KINGDOM -->
+    <div class="row align-items-start">
+        <div class="col">
+            <h2>Animal Kingdom</h2>
+            <img src="imgs/animal_kingdom.jpeg" class="park-image img-fluid">
+            <!-- Button trigger modal -->
+            <button type="button" class="primary-button" data-toggle="modal" data-target="#animalModal">
+                View Map
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="animalModal" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content" id='mapcontent'>
                         <div class="modal-body" id='mapcontent'>
@@ -99,274 +102,276 @@
                     </div>
                 </div>
             </div>
-                    </div>
-                    <div class="col">
-                        <h3>Activities</h3>
-                        ${itinerary_data.map (activity =>
-                            `${activity.parks_id === 2 ? 
-                                `
-                                ${activity.activity_id !== null ?
-                                    `<h4>${activity.activity_name}</h4>
-                                    <p>Time: ${activity.activity_time}</p>
-                                    <form action="/itinerary/delete_activity" method="POST">
-                                        <input type="hidden" name="activity_id" value="${activity.activity_id}">
-                                        <button class="secondary-button">Remove Activity</button>
-                                    </form>`
-                                    :
-                                    ``
-                                
-                                }
-                                `
-                                :
-                                ``
-                            
-                            }`
-                            
-                            ).join('')}
+        </div>
+        <div class="col">
+            <h3>Activities</h3>
+            ${itinerary_data.map (activity =>
+            `${activity.parks_id === 2 ?
+            `
+            ${activity.activity_id !== null ?
+            `<h4>${activity.activity_name}</h4>
+            <p>Time: ${activity.activity_time}</p>
+            <form action="/itinerary/delete_activity" method="POST">
+                <input type="hidden" name="activity_id" value="${activity.activity_id}">
+                <button class="secondary-button">Remove Activity</button>
+            </form>`
+            :
+            ``
 
-                    </div>
-
-                    <div class="col">
-                        <h3>Dining</h3>
-                        ${itinerary_data.map (restaurant =>
-                            `${restaurant.parks_id === 2 ? 
-                                `${restaurant.food_id !== null ? 
-                                    ` <h4>${restaurant.restaurant_name}</h4>
-                                    <div class="button-container dining-and-lodging">
-                                        <a href="${restaurant.menu}" class="secondary-button">View Menu</a>
-                                        <form action="/itinerary/delete_food" method="POST">
-                                            <input type="hidden" name="food_id" value="${restaurant.food_id}">
-                                            <button class="secondary-button">Remove Restaurant</button>
-                                        </form>
-                                    </div>
-                                    `
-                                    :
-                                    ``
-                                }
-                                
-                                `
-                                :
-                                ``
-                            
-                            }`
-                            
-                            ).join('')}
-                    </div>
-
-                </div>
-
-                <!-- Epcot -->
-                <div class="row align-items-start">
-                    <div class="col">
-                        <h2>Epcot</h2>
-                        <img src="imgs/epcot.jpeg" class="park-image img-fluid">
-                        <!-- Button trigger modal -->
-            <button type="button" class="primary-button" data-toggle="modal" data-target="#epcotModal">
-                View Map
-              </button>
-    
-                <!-- Modal -->
-                <div class="modal fade" id="epcotModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content" id='mapcontent'>
-                            <div class="modal-body" id='mapcontent'>
-                                <img src='../images/epcot_map.jpeg' width='1000px' class='modalmap'>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                    </div>
-                    <div class="col">
-                        <h3>Activities</h3>
-                        ${itinerary_data.map (activity =>
-                            `${activity.parks_id === 3 ? 
-                                `
-                                ${activity.activity_id !== null ?
-                                    `<h4>${activity.activity_name}</h4>
-                                    <p>Time: ${activity.activity_time}</p>
-                                    <form action="/itinerary/delete_activity" method="POST">
-                                        <input type="hidden" name="activity_id" value="${activity.activity_id}">
-                                        <button class="secondary-button">Remove Activity</button>
-                                    </form>`
-                                    :
-                                    ``
-                                
-                                }                                
-                                `
-                                :
-                                ``
-                            
-                            }`
-                            
-                            ).join('')}
-
-                    </div>
-                    <div class="col">
-                        <h3>Dining</h3>
-                        ${itinerary_data.map (restaurant =>
-                            `${restaurant.parks_id === 3 ? 
-                                `
-                                ${restaurant.food_id !== null ? 
-                                    ` <h4>${restaurant.restaurant_name}</h4>
-                                    <div class="button-container dining-and-lodging">
-                                        <a href="${restaurant.menu}" class="secondary-button">View Menu</a>
-                                        <form action="/itinerary/delete_food" method="POST">
-                                            <input type="hidden" name="food_id" value="${restaurant.food_id}">
-                                            <button class="secondary-button">Remove Restaurant</button>
-                                        </form>
-                                    </div>
-                                    `
-                                    :
-                                    ``
-                                }
-                                
-                                `
-                                :
-                                ``
-                            
-                            }`
-                            
-                            ).join('')}
-                    </div>
-                </div>
-
-                 <!-- Hollywood Studios -->
-                 <div class="row align-items-start">
-                    <div class="col">
-                        <h2>Hollywood Studios</h2>
-                        <img src="imgs/hollywood_studios.jpeg" class="park-image img-fluid">
-                        <!-- Button trigger modal -->
-            <button type="button" class="primary-button" data-toggle="modal" data-target="#hollywoodModal">
-                View Map
-              </button>
-    
-                <!-- Modal -->
-                <div class="modal fade" id="hollywoodModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content" id='mapcontent'>
-                            <div class="modal-body" id='mapcontent'>
-                                <img src='../images/hollywood_studios_map.jpeg' width='1000px' class='modalmap'>
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-                    </div>
-                    <div class="col">
-                        <h3>Activities</h3>
-                        ${itinerary_data.map (activity =>
-                            `${activity.parks_id === 4 ? 
-                                `
-                                ${activity.activity_id !== null ?
-                                    `<h4>${activity.activity_name}</h4>
-                                    <p>Time: ${activity.activity_time}</p>
-                                    <form action="/itinerary/delete_activity" method="POST">
-                                        <input type="hidden" name="activity_id" value="${activity.activity_id}">
-                                        <button class="secondary-button">Remove Activity</button>
-                                    </form>`
-                                    :
-                                    ``
-                                
-                                }
-                                `
-                                :
-                                ``
-                            
-                            }`
-                            
-                            ).join('')}
-
-                    </div>
-                    <div class="col">
-                        <h3>Dining</h3>
-                        ${itinerary_data.map (restaurant =>
-                            `${restaurant.parks_id === 4 ? 
-                                `
-                                ${restaurant.food_id !== null ? 
-                                    ` <h4>${restaurant.restaurant_name}</h4>
-                                    <div class="button-container dining-and-lodging">
-                                        <a href="${restaurant.menu}" class="secondary-button">View Menu</a>
-                                        <form action="/itinerary/delete_food" method="POST">
-                                            <input type="hidden" name="food_id" value="${restaurant.food_id}">
-                                            <button class="secondary-button">Remove Restaurant</button>
-                                        </form>
-                                    </div>
-                                    `
-                                    :
-                                    ``
-                                }
-                                
-                                `
-                                :
-                                ``
-                            
-                            }`
-                            
-                            ).join('')}
-                    </div>
-                </div>
-
-                <!-- LODGING -->
-                    
-                <div class="row align-items-start">
-                        ${lodging_data.map (hotel => 
-                            `${hotel.lodging_id !== null ?
-                                `
-                                <div class="col">
-                                    <h2>Your Lodging</h2>
-                                    <h3>${hotel.lodging_name}</h3>
-                                    <img src="${hotel.lodging_image}" class="hotel-image">
-                                    <div class="button-container dining-and-lodging">
-                                        <a href="${hotel.lodging_url}" target="_blank" class="secondary-button">Visit Website</a>
-                                        <form action="/itinerary/delete_lodging" method="POST">
-                                            <input type="hidden" name="lodging_id" value=${hotel.lodging_id}>
-                                            <button type="submit" class="secondary-button">Remove Lodging</button>
-                                        </form>
-                                    </div>
-                                </div>
-                                `
-                                :
-                                ``
-                                                    
-                            }`
-                            
-                            )}
-
-                </div>
-                
-                `
-                :
-
-                `
-                <div class="row align-items-start">
-                    <div class="col login-prompt">
-                        <h2>Start Planning Your Trip by Going to the Park Selector Page!</h2>
-                        <a href="/park_selector" class="primary-button">Choose a Park</a>
-                    </div>
-                    <div class="col">
-                        <img src="../imgs/cinderella_castle.jpeg" class="park-image">
-                    </div>
-                </div>
-                `
             }
-        
-        
-        `
-        :
-        `
-        <div class ="row align-items-start">
-            <div class="col login-prompt">
-                <h2>Sign Up or Login to Create Your Itinerary</h2>
-                <div class="button-container">
-                    <a href="users/register" class="primary-button">Register</a>
-                    <a href="users/login" class="primary-button">Login</a>
-                </div>
-            </div>
-            <div class="col">
-                <img src="../imgs/mickey_and_minnie.jpeg" class="park-image">
-            </div>
+            `
+            :
+            ``
+
+            }`
+
+            ).join('')}
+
         </div>
 
+        <div class="col">
+            <h3>Dining</h3>
+            ${itinerary_data.map (restaurant =>
+            `${restaurant.parks_id === 2 ?
+            `${restaurant.food_id !== null ?
+            ` <h4>${restaurant.restaurant_name}</h4>
+            <div class="button-container dining-and-lodging">
+                <a href="${restaurant.menu}" class="secondary-button">View Menu</a>
+                <form action="/itinerary/delete_food" method="POST">
+                    <input type="hidden" name="food_id" value="${restaurant.food_id}">
+                    <button class="secondary-button">Remove Restaurant</button>
+                </form>
+            </div>
+            `
+            :
+            ``
+            }
+
+            `
+            :
+            ``
+
+            }`
+
+            ).join('')}
+        </div>
+
+    </div>
+
+    <!-- Epcot -->
+    <div class="row align-items-start">
+        <div class="col">
+            <h2>Epcot</h2>
+            <img src="imgs/epcot.jpeg" class="park-image img-fluid">
+            <!-- Button trigger modal -->
+            <button type="button" class="primary-button" data-toggle="modal" data-target="#epcotModal">
+                View Map
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="epcotModal" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content" id='mapcontent'>
+                        <div class="modal-body" id='mapcontent'>
+                            <img src='../images/epcot_map.jpeg' width='1000px' class='modalmap'>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <h3>Activities</h3>
+            ${itinerary_data.map (activity =>
+            `${activity.parks_id === 3 ?
+            `
+            ${activity.activity_id !== null ?
+            `<h4>${activity.activity_name}</h4>
+            <p>Time: ${activity.activity_time}</p>
+            <form action="/itinerary/delete_activity" method="POST">
+                <input type="hidden" name="activity_id" value="${activity.activity_id}">
+                <button class="secondary-button">Remove Activity</button>
+            </form>`
+            :
+            ``
+
+            }
+            `
+            :
+            ``
+
+            }`
+
+            ).join('')}
+
+        </div>
+        <div class="col">
+            <h3>Dining</h3>
+            ${itinerary_data.map (restaurant =>
+            `${restaurant.parks_id === 3 ?
+            `
+            ${restaurant.food_id !== null ?
+            ` <h4>${restaurant.restaurant_name}</h4>
+            <div class="button-container dining-and-lodging">
+                <a href="${restaurant.menu}" class="secondary-button">View Menu</a>
+                <form action="/itinerary/delete_food" method="POST">
+                    <input type="hidden" name="food_id" value="${restaurant.food_id}">
+                    <button class="secondary-button">Remove Restaurant</button>
+                </form>
+            </div>
+            `
+            :
+            ``
+            }
+
+            `
+            :
+            ``
+
+            }`
+
+            ).join('')}
+        </div>
+    </div>
+
+    <!-- Hollywood Studios -->
+    <div class="row align-items-start">
+        <div class="col">
+            <h2>Hollywood Studios</h2>
+            <img src="imgs/hollywood_studios.jpeg" class="park-image img-fluid">
+            <!-- Button trigger modal -->
+            <button type="button" class="primary-button" data-toggle="modal" data-target="#hollywoodModal">
+                View Map
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="hollywoodModal" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content" id='mapcontent'>
+                        <div class="modal-body" id='mapcontent'>
+                            <img src='../images/hollywood_studios_map.jpeg' width='1000px' class='modalmap'>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <h3>Activities</h3>
+            ${itinerary_data.map (activity =>
+            `${activity.parks_id === 4 ?
+            `
+            ${activity.activity_id !== null ?
+            `<h4>${activity.activity_name}</h4>
+            <p>Time: ${activity.activity_time}</p>
+            <form action="/itinerary/delete_activity" method="POST">
+                <input type="hidden" name="activity_id" value="${activity.activity_id}">
+                <button class="secondary-button">Remove Activity</button>
+            </form>`
+            :
+            ``
+
+            }
+            `
+            :
+            ``
+
+            }`
+
+            ).join('')}
+
+        </div>
+        <div class="col">
+            <h3>Dining</h3>
+            ${itinerary_data.map (restaurant =>
+            `${restaurant.parks_id === 4 ?
+            `
+            ${restaurant.food_id !== null ?
+            ` <h4>${restaurant.restaurant_name}</h4>
+            <div class="button-container dining-and-lodging">
+                <a href="${restaurant.menu}" class="secondary-button">View Menu</a>
+                <form action="/itinerary/delete_food" method="POST">
+                    <input type="hidden" name="food_id" value="${restaurant.food_id}">
+                    <button class="secondary-button">Remove Restaurant</button>
+                </form>
+            </div>
+            `
+            :
+            ``
+            }
+
+            `
+            :
+            ``
+
+            }`
+
+            ).join('')}
+        </div>
+    </div>
+
+    <!-- LODGING -->
+
+    <div class="row align-items-start">
+        ${lodging_data.map (hotel =>
+        `${hotel.lodging_id !== null ?
         `
+        <div class="col">
+            <h2>Your Lodging</h2>
+            <h3>${hotel.lodging_name}</h3>
+            <img src="${hotel.lodging_image}" class="hotel-image">
+            <div class="button-container dining-and-lodging">
+                <a href="${hotel.lodging_url}" target="_blank" class="secondary-button">Visit Website</a>
+                <form action="/itinerary/delete_lodging" method="POST">
+                    <input type="hidden" name="lodging_id" value=${hotel.lodging_id}>
+                    <button type="submit" class="secondary-button">Remove Lodging</button>
+                </form>
+            </div>
+        </div>
+        `
+        :
+        ``
+
+        }`
+
+        )}
+
+    </div>
+
+    `
+    :
+
+    `
+    <div class="row align-items-start">
+        <div class="col login-prompt">
+            <h2>Start Planning Your Trip by Going to the Park Selector Page!</h2>
+            <a href="/park_selector" class="primary-button">Choose a Park</a>
+        </div>
+        <div class="col">
+            <img src="../imgs/cinderella_castle.jpeg" class="park-image">
+        </div>
+    </div>
+    `
+    }
+
+
+    `
+    :
+    `
+    <div class="row align-items-start">
+        <div class="col login-prompt">
+            <h2>Sign Up or Login to Create Your Itinerary</h2>
+            <div class="button-container">
+                <a href="users/register" class="primary-button">Register</a>
+                <a href="users/login" class="primary-button">Login</a>
+            </div>
+        </div>
+        <div class="col">
+            <img src="../imgs/mickey_and_minnie.jpeg" class="park-image">
+        </div>
+    </div>
+
+    `
     }
 
 </div>
