@@ -3,14 +3,16 @@ html {
   }
 
 body { 
-    background-color: rgb(42, 42, 92);
-    font-family: 'Nunito', sans-serif; 
+    background-color: rgb(42, 42, 92); 
+    height: 100%;
+    position: relative;
 }
 
 /* ALL UN-CLASSED TAG EFFECTS  --> */
 
 p { 
     color: white;
+    font-family: 'Open Sans', sans-serif;
 }
 
 a {
@@ -22,8 +24,13 @@ a:hover {
     cursor: url('/images/glove3.png'), auto;
 }
 
+h1 {
+   font-family: 'WaltographRegular';
+   color: white;
+}
+
 h2,h3,h4 {
-    font-family: 'WaltographRegular';
+    font-family: 'Nunito Sans', sans-serif;
     padding-bottom: 10px;
     padding-top: 8px;
     color: white;
@@ -519,13 +526,7 @@ footer {
     background-color: rgb(34, 34, 75);
     padding-top: 20px;
     padding-bottom: 20px;
-   }
-   
-body {
-    height: 100%;
-    position: relative;
 }
-
 
 /* Hamburger Mobile Responsiveness */
 @media screen and (max-width: 960px) {
@@ -593,13 +594,4 @@ body {
         margin-top: 10px;
     }
     
-}
-
-footer {
-    font-size: 10px;
-    color: white;
-    text-align: center;
-    background-color: rgb(34, 34, 75);
-    padding-top: 20px;
-    padding-bottom: 20px;
 }
