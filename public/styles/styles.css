@@ -40,6 +40,7 @@ h2,h3,h4 {
 .park-image {
     width: 300px;
     margin-top: 40px;
+    margin-bottom: 15px;
 }
 
 .lodging-image {

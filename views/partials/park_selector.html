@@ -6,6 +6,7 @@
         ${data.map(park => `
             <div class="col">
                 <h2>${park.park_name}</h2>
+                <img src='${park.park_image}' class="park-image">
                 <p class="park-description">${park.park_description}</p>
                 <form action="park_selector/update" method="POST">
                     <input type="hidden" name="parks_id" value="${park.id}">
@@ -25,7 +26,7 @@
                     
                     }
                     </form> 
-                <img src='${park.park_image}' class="park-image">
+
                
             </div>
            
