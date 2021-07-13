@@ -7,17 +7,17 @@
         <form action="/users/register" method="POST" class="hideThings" id="regForm">
             <h2>Register</h2>
             <label>First Name
-                <input name="first_name" class="form-control" type="text">
+                <input name="first_name" class="form-control" type="text" required>
             </label>
             <label>Last Name
-                <input name="last_name" class="form-control" type="text">
+                <input name="last_name" class="form-control" type="text" required>
             </label>
             <label>Email
-                <input name="user_email" class="form-control" type="email">
+                <input name="user_email" class="form-control" type="email" required>
             </label>
             <br>
             <label>Password
-                <input name="user_password" class="form-control" type="password">
+                <input name="user_password" class="form-control" type="password" required>
             </label>
             <br>
             <button type="submit" class="primary-button">Register</button>
@@ -30,12 +30,12 @@
             <div class="form-group">
                 <label for="exampleInputEmail1">Email address</label>
                 <input name="user_email" type="email" class="form-control" id="exampleInputEmail1"
-                    aria-describedby="emailHelp" placeholder="Enter email">
+                    aria-describedby="emailHelp" placeholder="Enter email" required>
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Password</label>
                 <input name="user_password" type="password" class="form-control" id="exampleInputPassword1"
-                    placeholder="Password">
+                    placeholder="Password" required>
             </div>
             <center>
                 <button type="submit" class="primary-button">Submit</button>
