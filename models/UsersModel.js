@@ -47,7 +47,6 @@ class UsersModel {
             // return a response to the controller, either valid or not
 
         } catch (error) {
-            console.error("ERROR: ", error)
             return error;
         }
     }

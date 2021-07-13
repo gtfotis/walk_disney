@@ -37,6 +37,7 @@ const parkSelectorController = require('./routes/park_selector');
 const userController = require('./routes/users');
 const diningController = require('./routes/dining');
 const lodgingController = require('./routes/lodging');
+const forbiddenController = require('./routes/403');
 const errorController = require('./routes/404');
 
 app.use('/', rootController);
@@ -46,4 +47,5 @@ app.use('/park_selector', parkSelectorController);
 app.use('/users', userController);
 app.use('/dining', diningController);
 app.use('/lodging', lodgingController);
+app.use('/403', forbiddenController);
 app.use('*', errorController);

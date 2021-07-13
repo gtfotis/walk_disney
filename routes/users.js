@@ -61,7 +61,7 @@ router.post('/login', async (req, res) => {
         res.redirect('/');
 
     } else {
-        res.sendStatus(403);
+        res.redirect('/403');
     }
 })
 
