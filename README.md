@@ -2,7 +2,7 @@
 
 Walk Disney is a Disney World vacation planning app. Users are able to create an account and choose activites, dining, and lodging from different parks and add them to their itinerary. Our team members either had never been to Disney or hadn't been since they were kids, so our goal was to take some of the stress out of planning a Disney trip by putting most of the information in one place. 
 
-Create an account and make your itinerary at [Walk Disney - link coming soon](#).
+Create an account and make your itinerary at ![Walk Disney](https://mouseguide.net/).
 
 ## Main Features
 
